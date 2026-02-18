@@ -6,7 +6,7 @@ import sys
 
 REPO = Path(__file__).resolve().parents[1]
 active_dir = REPO / "investments" / "guides" / "active"
-archive_dir = REPO / "investments" / "guides" / "archive"
+archive_dir = REPO / "archive"
 ops_dir = REPO / "investments" / "operations"
 templates_dir = REPO / "investments" / "templates"
 
@@ -48,7 +48,7 @@ for req in required_ops_dirs:
         errors.append(f"missing operations directory: {req.relative_to(REPO)}")
 
 if not (archive_dir / "README.md").exists():
-    errors.append("missing archive index: investments/guides/archive/README.md")
+    errors.append("missing archive index: archive/README.md")
 
 if archive_dir.exists():
     for p in archive_dir.iterdir():
@@ -56,9 +56,9 @@ if archive_dir.exists():
             continue
         name = p.name
         if " (" in name and name.endswith(").md"):
-            errors.append(f"lean-archive violation (duplicate style filename): investments/guides/archive/{name}")
+            errors.append(f"lean-archive violation (duplicate style filename): archive/{name}")
         if name.startswith("research-summary-template") and "_v" not in name and name != "README.md":
-            errors.append(f"lean-archive violation (unversioned template file): investments/guides/archive/{name}")
+            errors.append(f"lean-archive violation (unversioned template file): archive/{name}")
 
 if not templates_dir.exists():
     errors.append("missing templates directory: investments/templates")
