@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "thesis_id": "324780e7-b6e7-47f3-ad8e-ab2fca1b8dfe",
+    "slug": "thesis_ai_scarcity_infrastructure",
+    "name": "AI Scarcity Infrastructure",
+    "tier": "Tier-1",
+    "investment_role": "Structural Growth + Scarcity Rents + Inflation/Real-Asset Hedge",
+    "time_horizon_years": 3,
+    "review_cadence": "biweekly",
+    "version": "1.1",
+    "version_history": [
+      {
+        "version": "0.9",
+        "date": "2026-02-14",
+        "change": "Initial conversion from narrative thesis document into v3.1 JSON constitution (draft)."
+      },
+      {
+        "version": "1.0",
+        "date": "2026-02-14",
+        "change": "Finalized missing inputs: UUID set, allocation band set, persistence rules refined, expression layer structured, KPI index definitions standardized."
+      },
+      {
+        "version": "1.1",
+        "date": "2026-02-14",
+        "change": "v1.1 polish: added regulatory-constraint flag KPI to close P5 linkage; removed secondary KPI pillar-validation semantics; no change to core logic gates."
+      }
+    ],
+    "status": "active"
+  },
+  "north_star": {
+    "core_bet": "AI progress is constrained less by models and more by the physical stack (compute, memory, packaging, networking, datacenter power/cooling, grid interconnection), creating multi-year bottlenecks and scarcity rents for enabling supply chains.",
+    "portfolio_role": "Own bottleneck owners across semis + power/grid + datacenter infrastructure, while managing rate sensitivity and crowding risk; use a multi-asset approach (equities core, commodities/rates/FX hedges, options/volatility structures) to reduce air-pocket risk."
+  },
+  "structural_pillars": [
+    {
+      "id": "P1",
+      "statement": "AI capex remains elevated and persistent over 2–5 years (even if quarterly cadence fluctuates) because deployment is constrained by infrastructure availability rather than purely by demand whims.",
+      "falsifiable_test": "Top-5 hyperscaler aggregate capex is down >25% YoY for 4 consecutive quarters AND the decline is confirmed as demand destruction rather than supply timing.",
+      "linked_kpis": [
+        "kpi_hyper_capex"
+      ]
+    },
+    {
+      "id": "P2",
+      "statement": "Advanced packaging and grid procurement lead times remain multi-year, preventing rapid supply response and sustaining pricing power for constrained suppliers.",
+      "falsifiable_test": "Transformer/cable procurement lead times normalize back toward pre-2021 levels within 12 months, removing scarcity pricing power across grid equipment.",
+      "linked_kpis": [
+        "kpi_transformer_lt",
+        "kpi_packaging"
+      ]
+    },
+    {
+      "id": "P3",
+      "statement": "Power becomes the marginal constraint: datacenter load growth increasingly drives incremental electricity demand and related capex rather than being absorbed by existing grid slack.",
+      "falsifiable_test": "Datacenter electricity demand growth materially undershoots base-case trajectories due to structural stagnation (not timing shifts).",
+      "linked_kpis": [
+        "kpi_dc_power"
+      ]
+    },
+    {
+      "id": "P4",
+      "statement": "Scarcity rents accrue to enabling bottlenecks (HBM/memory, packaging, high-voltage equipment, thermal/cooling, networking) rather than being competed away across commoditized layers.",
+      "falsifiable_test": "Bottleneck pricing/margin evidence turns persistently negative (e.g., HBM pricing pressure reverses and remains falling) while capacity constraints are no longer described as binding by primary sources.",
+      "linked_kpis": [
+        "kpi_hbm",
+        "kpi_packaging"
+      ]
+    },
+    {
+      "id": "P5",
+      "statement": "Policy and regulation remain investable: major jurisdictions do not impose persistent restrictions that materially block datacenter buildout or utility rate-base expansion without compensating mechanisms.",
+      "falsifiable_test": "Regulatory/permitting actions persistently block datacenter buildout or utility rate-base expansion without workable compensating mechanisms in major jurisdictions.",
+      "linked_kpis": [
+        "kpi_regulatory_constraint_flag"
+      ]
+    }
+  ],
+  "kill_criteria": [
+    {
+      "id": "K1",
+      "condition": "Hyperscaler AI/datacenter capex enters a sustained down-cycle (aggregate capex down >25% YoY for 4 consecutive quarters) AND the decline is confirmed as demand destruction rather than supply timing.",
+      "persistence_required": "4 consecutive quarters",
+      "severity": "hard"
+    },
+    {
+      "id": "K2",
+      "condition": "Key physical bottlenecks resolve materially faster than expected (e.g., transformer/cable procurement lead times normalize back toward pre-2021 levels within 12 months), removing scarcity pricing power across grid equipment.",
+      "persistence_required": "within 12 months",
+      "severity": "hard"
+    },
+    {
+      "id": "K3",
+      "condition": "Datacenter electricity demand growth materially undershoots base-case trajectories due to structural demand stagnation rather than timing shifts.",
+      "persistence_required": "2 consecutive quarters",
+      "severity": "hard"
+    },
+    {
+      "id": "K4",
+      "condition": "Real yields/rates rise to a regime that persistently crushes long-duration AI-infra equities without offsetting cash-flow capture (thesis becomes a pure multiple trade), unless the portfolio transitions to commodity/credit/short-duration expressions.",
+      "persistence_required": "8 consecutive weeks",
+      "severity": "soft"
+    }
+  ],
+  "kpis": {
+    "primary": [
+      {
+        "id": "kpi_hyper_capex",
+        "name": "Hyperscaler Capex Momentum (Top-5 aggregate)",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "Earnings/filings (primary); rating agencies and aggregators (secondary)",
+        "frequency": "quarterly",
+        "rag_rules": {
+          "green": "10 to 80",
+          "amber": "0 to 10",
+          "red": "-80 to 0"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_dc_power",
+        "name": "Data Center Electricity Demand (Global)",
+        "unit": "TWh",
+        "direction": "higherIsBetter",
+        "source": "IEA; grid operators; credible research",
+        "frequency": "annual (with interim credible updates)",
+        "rag_rules": {
+          "green": "above_trend",
+          "amber": "on_trend",
+          "red": "below_trend"
+        },
+        "validates_pillar": "P3"
+      },
+      {
+        "id": "kpi_transformer_lt",
+        "name": "Grid Procurement Lead Time (Large Power Transformers)",
+        "unit": "weeks",
+        "direction": "higherIsBetter",
+        "source": "IEA/CISA/NIAC; OEM disclosures",
+        "frequency": "quarterly (or when updated by primary sources)",
+        "rag_rules": {
+          "green": "120 to 240",
+          "amber": "80 to 120",
+          "red": "0 to 80"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_packaging",
+        "name": "Advanced Packaging Tightness (CoWoS capacity indicator)",
+        "unit": "index",
+        "direction": "higherIsBetter",
+        "source": "TSMC commentary; supply-chain research",
+        "frequency": "monthly/quarterly (as available)",
+        "rag_rules": {
+          "green": "tight",
+          "amber": "improving",
+          "red": "loose"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_hbm",
+        "name": "Memory / HBM Cost Pressure Proxy",
+        "unit": "index",
+        "direction": "higherIsBetter",
+        "source": "Company commentary; credible industry trackers",
+        "frequency": "monthly/quarterly (as available)",
+        "rag_rules": {
+          "green": "rising",
+          "amber": "stable",
+          "red": "falling"
+        },
+        "validates_pillar": "P4"
+      }
+    ],
+    "secondary": [
+      {
+        "id": "kpi_real_yield",
+        "name": "Real Yields Sensitivity (10y real yield)",
+        "unit": "percent",
+        "direction": "lowerIsBetter",
+        "source": "Central bank/market data",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "-2 to 1",
+          "amber": "1 to 2",
+          "red": "2 to 6"
+        }
+      },
+      {
+        "id": "kpi_copper",
+        "name": "Copper Tightness Proxy (Front vs 3M curve state)",
+        "unit": "index",
+        "direction": "higherIsBetter",
+        "source": "Futures market data (front-month vs 3M spread)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "tight_backwardation",
+          "amber": "neutral",
+          "red": "loose_contango"
+        }
+      },
+      {
+        "id": "kpi_infra_credit",
+        "name": "Utility/Infra Credit Spread (IG)",
+        "unit": "bps",
+        "direction": "lowerIsBetter",
+        "source": "IG indices / sector spreads",
+        "frequency": "weekly",
+        "rag_rules": {
+          "green": "0 to 140",
+          "amber": "140 to 220",
+          "red": "220 to 600"
+        }
+      },
+      {
+        "id": "kpi_crowding",
+        "name": "AI Infra Crowding / Valuation Excess (3-signal composite)",
+        "unit": "index",
+        "direction": "lowerIsBetter",
+        "source": "Valuation data; ETF flows; options skews (composite)",
+        "frequency": "weekly",
+        "rag_rules": {
+          "green": "low (0-1/3)",
+          "amber": "medium (2/3)",
+          "red": "extreme (3/3)"
+        }
+      },
+      {
+        "id": "kpi_regulatory_constraint_flag",
+        "name": "Datacenter/AI Infrastructure Regulatory Constraint Flag",
+        "unit": "flag",
+        "direction": "lowerIsBetter",
+        "source": "Manual/curated policy & permitting events log mapped to core exposure regions",
+        "frequency": "event-driven",
+        "rag_rules": {
+          "green": "no_constraint",
+          "amber": "temporary_or_localized",
+          "red": "structural_or_widespread"
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "core_approved_vehicles": [
+      "NVDA",
+      "TSM",
+      "ASML",
+      "AVGO",
+      "MU",
+      "Eaton",
+      "ABB",
+      "Schneider Electric",
+      "GE Vernova",
+      "Vertiv"
+    ],
+    "satellite_vehicles": [
+      "AMD",
+      "AMAT",
+      "LRCX",
+      "KLAC",
+      "Arista",
+      "Ciena",
+      "Siemens",
+      "Copper futures / diversified copper exposure",
+      "Inflation-linked bonds / real-yield hedges"
+    ],
+    "hedges_and_overlays": [
+      "Index hedges and collar structures for crowded sleeves"
+    ],
+    "excluded_vehicles": [
+      "Unhedged long-duration exposure where the return driver is primarily multiple expansion rather than cash-flow capture",
+      "Commodity exposure without evidenced linkage to datacenter/grid build (no story metals without demand proof)",
+      "Illiquid/private exposures unless risk controls, governance, and drawdown tolerance are explicit",
+      "Single-name Nvidia-only proxy positioning"
+    ],
+    "risk_constraints": [
+      "Avoid paying priced-for-perfection multiples without an identifiable scarcity rent mechanism",
+      "Avoid unhedged long-duration exposure when the return driver is primarily multiple expansion",
+      "Manage rate sensitivity and crowding risk in high-multiple AI winners",
+      "Use multi-asset hedges (rates/FX/commodities) and options/volatility structures to manage air-pocket risk",
+      "Max 50% concentration in a single name within this sleeve",
+      "No leverage"
+    ],
+    "rebalance_trigger": "5% deviation"
+  },
+  "allocation": {
+    "target_range_percent": [
+      10,
+      25
+    ]
+  },
+  "data_policy": {
+    "on_missing_primary_kpis": "freeze_adds_only"
+  },
+  "governance": {
+    "redteam_required_on_red": true,
+    "escalation_trigger": [
+      "kill_proximity",
+      "multiple_primary_red"
+    ]
+  }
+}

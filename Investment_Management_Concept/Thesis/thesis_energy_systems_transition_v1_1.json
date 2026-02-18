@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "thesis_id": "b8026772-83c2-470d-89dc-b79fe014609f",
+    "slug": "thesis_energy_systems_transition",
+    "name": "Energy Systems Transition",
+    "tier": "Tier-1",
+    "investment_role": "Conservative Diversifier + Asymmetric Upside (Scarcity & Reliability)",
+    "time_horizon_years": 3,
+    "review_cadence": "biweekly",
+    "version": "1.1",
+    "version_history": [
+      {
+        "version": "0.9",
+        "date": "2026-02-14",
+        "change": "Initial conversion from thesis export into v3.1 JSON constitution (draft)."
+      },
+      {
+        "version": "1.0",
+        "date": "2026-02-14",
+        "change": "Finalized missing inputs: UUID set; allocation band set; KPI IDs normalized (KPI4/KPI5); KPI sources locked to canonical series with fallbacks; kill criteria expanded with persistence filters; implementation/expression layer structured (core/satellite/hedges) consistent with other theses."
+      },
+      {
+        "version": "1.1",
+        "date": "2026-02-14",
+        "change": "v1.1 polish: added 10y real yield secondary risk-control KPI; removed secondary KPI pillar-validation semantics."
+      }
+    ],
+    "status": "active"
+  },
+  "north_star": {
+    "core_bet": "The transition to electrification and AI-driven load growth collides with decades of underinvestment and tightening geopolitical supply, producing sustained scarcity and reliability premiums across key energy system bottlenecks. Returns concentrate in assets and supply chains where regulation allows cost recovery and pricing power (grid buildout, equipment bottlenecks, dispatchable reliability), rather than in commodity trading. The thesis focuses on investable scarcity rents tied to physical constraints and reliability needs, with a conservative posture and asymmetric upside when markets underestimate persistence.",
+    "portfolio_role": "Diversifying sleeve designed to benefit from energy-system scarcity and reliability needs; complements AI-infrastructure thesis while avoiding pure commodity beta; aims to reduce portfolio fragility to geopolitical and grid constraints."
+  },
+  "structural_pillars": [
+    {
+      "id": "P1",
+      "statement": "Scarcity premium persists: electrification + AI/datacenter load growth increase electricity demand faster than grid capacity and interconnection can expand.",
+      "falsifiable_test": "Electricity demand growth fails to materialize structurally (not a timing pause): commercial sales growth stays weak and datacenter construction spend contracts sharply for multiple periods.",
+      "linked_kpis": [
+        "kpi_elec_sales_growth",
+        "kpi_dc_construction_spend"
+      ]
+    },
+    {
+      "id": "P2",
+      "statement": "Reliability becomes increasingly valuable: constrained capacity and weather volatility drive higher volatility and higher scarcity pricing in stressed regions.",
+      "falsifiable_test": "Regional wholesale prices and volatility compress structurally due to sustained oversupply and surplus transmission capacity.",
+      "linked_kpis": [
+        "kpi_ercot_price",
+        "kpi_rel_strength_reliability"
+      ]
+    },
+    {
+      "id": "P3",
+      "statement": "Supply-side constraints persist: energy and grid capex remains insufficient relative to replacement and expansion needs, and key components face multi-year procurement constraints.",
+      "falsifiable_test": "Grid buildout constraints resolve rapidly (lead times normalize) and capex expands enough to eliminate bottlenecks within a short horizon.",
+      "linked_kpis": [
+        "kpi_rel_strength_reliability"
+      ]
+    },
+    {
+      "id": "P4",
+      "statement": "Value capture is investable: regulation and policy allow cost recovery and acceptable returns for key infrastructure, rather than consistently suppressing pricing power without compensation.",
+      "falsifiable_test": "Regulatory regimes structurally suppress returns via price caps/windfall taxes/forced socialization for extended periods without compensatory mechanisms.",
+      "linked_kpis": [
+        "kpi_regulatory_capture_flag"
+      ]
+    },
+    {
+      "id": "P5",
+      "statement": "Geopolitics remains an amplifier: geopolitical risk and supply-chain fragmentation raise the premium on domestic/secure supply and reliability assets.",
+      "falsifiable_test": "Geopolitical risk declines to structurally low levels and supply chains re-globalize without frictions for multiple years.",
+      "linked_kpis": [
+        "kpi_geopolitical_risk"
+      ]
+    }
+  ],
+  "kill_criteria": [
+    {
+      "id": "K1",
+      "condition": "IF regulatory regimes structurally suppress pricing power (price caps, windfall taxes, forced socialization) without compensatory mechanisms across core exposure regions, THEN the thesis is invalid.",
+      "persistence_required": "12 consecutive months",
+      "severity": "hard"
+    },
+    {
+      "id": "K2",
+      "condition": "IF demand regime breaks structurally: KPI1 (US commercial electricity sales growth) is Red (<1%) AND KPI4 (US data center construction spend index) is Red (<80) for 2 consecutive quarters, THEN the scarcity-demand pillar is invalid.",
+      "persistence_required": "2 consecutive quarters",
+      "severity": "hard"
+    },
+    {
+      "id": "K3",
+      "condition": "IF regional scarcity pricing and reliability premium structurally compress (wholesale prices and reliability-relative strength both persistently weaken), indicating sustained oversupply and elimination of constraints, THEN the thesis is invalid.",
+      "persistence_required": "2 consecutive quarters",
+      "severity": "hard"
+    }
+  ],
+  "kpis": {
+    "primary": [
+      {
+        "id": "kpi_elec_sales_growth",
+        "name": "US Commercial Electricity Sales Growth (YoY, 12m moving average)",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "EIA Electric Power Monthly (Table 5.1), computed; fallback: EIA electricity monthly update",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": ">= 3",
+          "amber": "1 to 3",
+          "red": "< 1"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_ercot_price",
+        "name": "ERCOT North Hub Wholesale Electricity Price (monthly avg, peak/on-peak)",
+        "unit": "USD/MWh",
+        "direction": "higherIsBetter",
+        "source": "EIA Wholesale Electricity Market Data (ERCOT North Hub); fallback: ERCOT market reports",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": ">= 70",
+          "amber": "40 to 70",
+          "red": "< 40"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_rel_strength_reliability",
+        "name": "Reliability & Infrastructure Relative Strength (NLR + GRID) / SPY (monthly close ratio)",
+        "unit": "ratio",
+        "direction": "higherIsBetter",
+        "source": "Yahoo Finance (monthly close), computed; fallback: Google Finance",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": ">= 1.00",
+          "amber": "0.90 to 1.00",
+          "red": "< 0.90"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_dc_construction_spend",
+        "name": "US Data Center Construction Spend (Index, SAAR proxy)",
+        "unit": "index",
+        "direction": "higherIsBetter",
+        "source": "FRED TLNRESCON (SAAR), computed index; fallback: Census Construction Spending",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": ">= 120",
+          "amber": "80 to 120",
+          "red": "< 80"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_geopolitical_risk",
+        "name": "Geopolitical Risk Index (Caldara/Iacoviello GPR Benchmark)",
+        "unit": "index",
+        "direction": "higherIsBetter",
+        "source": "Caldara/Iacoviello GPR (Benchmark series); fallback: closest matching FRED series if available",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": ">= 120",
+          "amber": "80 to 120",
+          "red": "< 80"
+        },
+        "validates_pillar": "P5"
+      }
+    ],
+    "secondary": [
+      {
+        "id": "kpi_regulatory_capture_flag",
+        "name": "Regulatory Value Capture Flag (price caps/windfall taxes/socialization)",
+        "unit": "flag",
+        "direction": "lowerIsBetter",
+        "source": "Manual/curated regulatory events log mapped to holdings and regions",
+        "frequency": "event-driven",
+        "rag_rules": {
+          "green": "no_suppression",
+          "amber": "temporary_or_compensated",
+          "red": "structural_uncompensated"
+        }
+      },
+      {
+        "id": "kpi_real_yield_10y",
+        "name": "US 10y Real Yield (TIPS)",
+        "unit": "percent",
+        "direction": "lowerIsBetter",
+        "source": "FRED (DFII10)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "-2 to 1",
+          "amber": "1 to 2",
+          "red": "2 to 6"
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "core_approved_vehicles": [
+      "Grid infrastructure and electrical equipment leaders (transformers, switchgear, transmission buildout) where pricing power/cost recovery is investable",
+      "Dispatchable reliability beneficiaries where market design supports returns (capacity markets / scarcity pricing)",
+      "Nuclear fuel cycle / nuclear services exposure where regulation allows value capture"
+    ],
+    "satellite_vehicles": [
+      "Regional utilities in scarcity regions with visible rate-base expansion and cost recovery",
+      "Data-center power enablers (cooling, power management, switchgear) as satellites to manage overlap with AI-infra thesis"
+    ],
+    "hedges_and_overlays": [
+      "Duration/rate-risk control when rate regime pressures infra multiples",
+      "Reduce sleeve to minimum allocation band when KPI3 (relative strength) is Red for 2 consecutive months",
+      "Avoid concentration in politically exposed jurisdictions without compensation mechanisms"
+    ],
+    "excluded_vehicles": [
+      "Pure commodity exposure as a primary expression (no commodity-cycle trading thesis)",
+      "Subsidy-dependent commoditized manufacturing without scarcity rents",
+      "Assets reliant on policy promises without observable cash-flow capture mechanics",
+      "Leverage as a default return enhancer"
+    ],
+    "risk_constraints": [
+      "Focus on scarcity rents tied to physical constraints and reliability needs",
+      "Avoid double-counting identical instruments across Energy and AI theses (overlap must be satellite in one thesis)",
+      "No leverage",
+      "Max 15% single-name exposure within this sleeve"
+    ],
+    "rebalance_trigger": "5% deviation"
+  },
+  "allocation": {
+    "target_range_percent": [
+      8,
+      20
+    ]
+  },
+  "data_policy": {
+    "on_missing_primary_kpis": "freeze_adds_only"
+  },
+  "governance": {
+    "redteam_required_on_red": true,
+    "escalation_trigger": [
+      "kill_proximity",
+      "multiple_primary_red"
+    ]
+  }
+}

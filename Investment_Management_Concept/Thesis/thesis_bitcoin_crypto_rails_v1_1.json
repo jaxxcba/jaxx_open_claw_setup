@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "thesis_id": "25321b8f-612b-4e8e-b17f-bfca2db6b1f6",
+    "slug": "thesis_bitcoin_crypto_rails",
+    "name": "Bitcoin & Crypto Rails Mega Thesis",
+    "tier": "Tier-1",
+    "investment_role": "Growth",
+    "time_horizon_years": 3,
+    "review_cadence": "biweekly",
+    "version": "1.1",
+    "version_history": [
+      {
+        "version": "0.9",
+        "date": "2026-02-14",
+        "change": "Initial conversion from thesis export into v3.1 JSON constitution (draft)."
+      },
+      {
+        "version": "1.0",
+        "date": "2026-02-14",
+        "change": "Finalized missing inputs: UUID set; allocation band set; implementation/expression layer populated (core/satellite/hedges); KPI sources fixed to single authoritative series; added 10y real yield KPI as macro regime guardrail."
+      },
+      {
+        "version": "1.1",
+        "date": "2026-02-14",
+        "change": "v1.1 polish: tightened MVRV Z-Score RAG bands to separate accumulate vs hold; removed secondary KPI pillar-validation semantics."
+      }
+    ],
+    "status": "active"
+  },
+  "north_star": {
+    "core_bet": "The monetary regime remains defined by high global debt, persistent central-bank liquidity, and policy discretion that structurally erodes monetary credibility (debasement). Bitcoin is positioned as digital hard money with a fixed supply cap and decentralized security, enabling permissionless global settlement and serving as the core long-duration asset in the thesis. In parallel, a capped alt-crypto sleeve (primarily Ethereum and major L2s) provides exposure to programmable settlement and DeFi primitives, with stablecoins as the practical on-chain payments rail. The portfolio posture is Bitcoin-first (core) with selective, risk-managed exposure to crypto infrastructure where adoption and on-chain liquidity are durable. Adds are driven by regime persistence and improving adoption/institutional access rather than short-term price momentum. Trims or exit decisions are triggered by valuation extremes, structural breaks in network security/investability, or sustained degradation of adoption/rail health.",
+    "portfolio_role": "Bitcoin-first core position as long-duration scarce asset exposure; capped, risk-managed exposure to crypto settlement rails and infrastructure where adoption and on-chain liquidity are durable; avoid leverage and opaque counterparty risk."
+  },
+  "structural_pillars": [
+    {
+      "id": "P1",
+      "statement": "Debasement regime persists over the next 3–5 years: fiscal dominance, elevated debt, and negative/low real yields persist such that monetary credibility continues to erode beyond what CPI alone captures.",
+      "falsifiable_test": "Sustained regime shift to materially positive real yields and credible fiscal consolidation across major economies for multiple years, reversing the policy-discretion/debasement dynamic.",
+      "linked_kpis": [
+        "kpi_real_yield_10y"
+      ]
+    },
+    {
+      "id": "P2",
+      "statement": "Bitcoin supply discipline holds: Bitcoin maintains its 21,000,000 supply cap and proof-of-work security model without changes that materially weaken scarcity or censorship resistance.",
+      "falsifiable_test": "Protocol-level change or credible demonstrated break that materially weakens scarcity/censorship resistance, without a widely accepted mitigation adopted within 12 months.",
+      "linked_kpis": [
+        "kpi_hashrate_ratio"
+      ]
+    },
+    {
+      "id": "P3",
+      "statement": "Institutional access remains available: regulated access channels (e.g., spot BTC ETFs and institutional custody) remain broadly available, enabling continued participation and flows.",
+      "falsifiable_test": "Coordinated major-jurisdiction policy effectively prohibits regulated custody/settlement access for Bitcoin for 12 consecutive months or more.",
+      "linked_kpis": [
+        "kpi_btc_etf_inflows_13w"
+      ]
+    },
+    {
+      "id": "P4",
+      "statement": "Stablecoin rails continue scaling: stablecoin supply and usage remain a core on-chain settlement layer, supporting DeFi and broader crypto payment/settlement utility.",
+      "falsifiable_test": "Stablecoin market cap and usage enter a sustained structural contraction (not cyclical risk-off) and/or major jurisdictions prohibit stablecoin issuance/usage in a way that materially degrades on-chain settlement utility.",
+      "linked_kpis": [
+        "kpi_stablecoin_mcap",
+        "kpi_defi_tvl"
+      ]
+    }
+  ],
+  "kill_criteria": [
+    {
+      "id": "K1",
+      "condition": "IF a credible cryptographic break (e.g., quantum-capable attack) against Bitcoin's core signatures is demonstrated AND no widely accepted mitigation path is adopted within 12 months, THEN the thesis is invalid.",
+      "persistence_required": "within 12 months (mitigation must be adopted)",
+      "severity": "hard"
+    },
+    {
+      "id": "K2",
+      "condition": "IF coordinated major-jurisdiction policy (e.g., US+EU+UK) effectively prohibits regulated custody/settlement access for Bitcoin for 12 consecutive months or more, THEN the investability thesis is invalid.",
+      "persistence_required": "12 consecutive months",
+      "severity": "hard"
+    },
+    {
+      "id": "K3",
+      "condition": "IF Bitcoin experiences sustained consensus failure that breaks settlement finality (e.g., deep reorg or irreparable chain split) for 30 days or more, THEN the thesis is invalid.",
+      "persistence_required": "30 days",
+      "severity": "hard"
+    }
+  ],
+  "kpis": {
+    "primary": [
+      {
+        "id": "kpi_mvrv_z",
+        "name": "BTC MVRV Z-Score (floored at 0)",
+        "unit": "z",
+        "direction": "lowerIsBetter",
+        "source": "Glassnode (MVRV Z-Score series)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "0 to 1.5",
+          "amber": "1.5 to 3",
+          "red": "3 to 12"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_hashrate_ratio",
+        "name": "BTC Hashrate vs 180d MA (30d avg / 180d MA * 100)",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "Coin Metrics (hashrate series)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "95 to 200",
+          "amber": "85 to 95",
+          "red": "0 to 85"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_stablecoin_mcap",
+        "name": "Stablecoin Total Market Cap",
+        "unit": "USD bn",
+        "direction": "higherIsBetter",
+        "source": "DefiLlama (stablecoin market cap)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "250 to 600",
+          "amber": "150 to 250",
+          "red": "0 to 150"
+        },
+        "validates_pillar": "P4"
+      },
+      {
+        "id": "kpi_btc_etf_inflows_13w",
+        "name": "US Spot BTC ETF Net Inflows (13w rolling, floored at 0)",
+        "unit": "USD bn",
+        "direction": "higherIsBetter",
+        "source": "Farside Investors (US spot BTC ETF net flows)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "5 to 50",
+          "amber": "1 to 5",
+          "red": "0 to 1"
+        },
+        "validates_pillar": "P3"
+      }
+    ],
+    "secondary": [
+      {
+        "id": "kpi_real_yield_10y",
+        "name": "US 10y Real Yield (TIPS)",
+        "unit": "percent",
+        "direction": "lowerIsBetter",
+        "source": "FRED (DFII10)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "-2 to 1",
+          "amber": "1 to 2",
+          "red": "2 to 6"
+        }
+      },
+      {
+        "id": "kpi_btc_dominance",
+        "name": "BTC Dominance",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "CoinGecko (BTC dominance)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "55 to 80",
+          "amber": "45 to 55",
+          "red": "0 to 45"
+        }
+      },
+      {
+        "id": "kpi_defi_tvl",
+        "name": "DeFi Total Value Locked (TVL)",
+        "unit": "USD bn",
+        "direction": "higherIsBetter",
+        "source": "DefiLlama (TVL)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "80 to 500",
+          "amber": "40 to 80",
+          "red": "0 to 40"
+        }
+      },
+      {
+        "id": "kpi_active_addresses",
+        "name": "BTC Active Addresses (30d avg)",
+        "unit": "millions",
+        "direction": "higherIsBetter",
+        "source": "Coin Metrics (active addresses)",
+        "frequency": "daily/weekly",
+        "rag_rules": {
+          "green": "1.1 to 5",
+          "amber": "0.8 to 1.1",
+          "red": "0 to 0.8"
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "core_approved_vehicles": [
+      "Direct BTC (self-custody)",
+      "IBIT (spot BTC ETF)",
+      "FBTC (spot BTC ETF)"
+    ],
+    "satellite_vehicles": [
+      "ETH (spot or regulated wrapper/ETP)",
+      "Capped L2 exposure (pre-approved list only)",
+      "COIN (equity) as regulated infrastructure proxy (satellite only)"
+    ],
+    "hedges_and_overlays": [
+      "Collars or put spreads on BTC ETF exposure during crowding/valuation extremes",
+      "Reduce to minimum allocation band when primary valuation KPI is red"
+    ],
+    "excluded_vehicles": [
+      "Meme/narrative tokens without durable utility, security, and credible decentralization",
+      "Opaque yield products with material counterparty/rehypothecation risk",
+      "Exposures that materially increase legal or operational tail risk (e.g., sanctions-sensitive assets)",
+      "Leveraged products and margin-based exposure as a default expression"
+    ],
+    "risk_constraints": [
+      "Not a short-term trading thesis and not a leveraged timing strategy",
+      "Bitcoin-first core; capped satellite sleeve only",
+      "Avoid leverage and rehypothecation/counterparty tail risk",
+      "Prefer regulated access and robust custody/security controls",
+      "Max 50% concentration in a single name within the satellite sleeve"
+    ],
+    "rebalance_trigger": "5% deviation"
+  },
+  "allocation": {
+    "target_range_percent": [
+      5,
+      20
+    ]
+  },
+  "data_policy": {
+    "on_missing_primary_kpis": "freeze_adds_only"
+  },
+  "governance": {
+    "redteam_required_on_red": true,
+    "escalation_trigger": [
+      "kill_proximity",
+      "multiple_primary_red"
+    ]
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "thesis_id": "4c097670-d0e1-4476-97ae-e78c3778d41b",
+    "slug": "thesis_dividend_quality_compounders",
+    "name": "Dividend Quality Compounders",
+    "tier": "Tier-1",
+    "investment_role": "Income + Defensive Growth",
+    "time_horizon_years": 3,
+    "review_cadence": "biweekly",
+    "version": "1.1",
+    "version_history": [
+      {
+        "version": "0.9",
+        "date": "2026-02-14",
+        "change": "Initial conversion from thesis export into v3.1 JSON constitution (draft)."
+      },
+      {
+        "version": "1.0",
+        "date": "2026-02-14",
+        "change": "Finalized missing inputs: UUID set; allocation band set; implementation/expression layer structured (core/satellite/hedges); KPI sources standardized to portfolio-computed series with explicit fallbacks; financials solvency proxies defined; benchmark defined for drawdown-relative KPI; kill-criteria persistence refined; assumptions converted into structural pillars with KPI linkage."
+      },
+      {
+        "version": "1.1",
+        "date": "2026-02-14",
+        "change": "v1.1 polish: embedded explicit quality-screen definition for reproducibility; removed secondary KPI pillar-validation semantics."
+      }
+    ],
+    "status": "active"
+  },
+  "north_star": {
+    "core_bet": "A concentrated portfolio of high-quality, shareholder-friendly businesses can compound capital through durable earnings growth and sustainable dividends across cycles. The core edge is discipline: insist on dividend sustainability (coverage), balance-sheet strength, and management commitment to capital returns. Use valuation-aware adds (relative yield vs history) and systematic quality screens to avoid dividend traps. The thesis aims to deliver resilient total returns with meaningful cash yield, lower drawdowns than broad equities, and the ability to reinvest dividends through downturns.",
+    "portfolio_role": "Stabilizing core sleeve delivering income and defensive compounding; primary anchor for capital preservation and steady cash flow; complements higher-volatility sleeves (AI, Energy, Bitcoin)."
+  },
+  "structural_pillars": [
+    {
+      "id": "P1",
+      "statement": "Dividend durability holds: the portfolio’s aggregate dividends are covered by cash flows and are not dependent on financial engineering or transient commodity cycles.",
+      "falsifiable_test": "Aggregate dividend coverage (portfolio FCF/dividends) falls below 1.0x AND does not recover above 1.2x within 12 months, indicating structural dividend stress.",
+      "linked_kpis": [
+        "kpi_div_coverage",
+        "kpi_div_cut_rate"
+      ]
+    },
+    {
+      "id": "P2",
+      "statement": "Valuation discipline is maintained: purchases are made when expected total return is supported by reasonable valuation and yield relative to history, reducing the risk of paying peak multiples for 'defensive' assets.",
+      "falsifiable_test": "Portfolio yield remains meaningfully below its own 5-year average yield without offsetting growth/quality justification, and subsequent returns underperform benchmark persistently.",
+      "linked_kpis": [
+        "kpi_yield_vs_5y"
+      ]
+    },
+    {
+      "id": "P3",
+      "statement": "Balance-sheet strength persists: aggregate leverage remains compatible with stable dividends and refinancing resilience through higher-rate regimes.",
+      "falsifiable_test": "A material portion of the portfolio shifts into leverage profiles inconsistent with dividend safety (e.g., sustained leverage deterioration) and cannot be rotated without violating quality constraints.",
+      "linked_kpis": [
+        "kpi_leverage",
+        "kpi_interest_coverage"
+      ]
+    },
+    {
+      "id": "P4",
+      "statement": "Quality discipline persists: holdings meet defined quality screens (profitability, stability, payout prudence) so that the sleeve avoids dividend traps and structurally weak issuers.",
+      "falsifiable_test": "≥30% of sleeve weight fails the quality screen for 2 consecutive quarters AND rotation back to compliant names is not feasible without breaching allocation/constraints.",
+      "linked_kpis": [
+        "kpi_quality_screen_pass_rate"
+      ]
+    },
+    {
+      "id": "P5",
+      "statement": "The regulatory environment remains investable: dividend policies are not structurally impaired by regulation across key holdings (especially in financials).",
+      "falsifiable_test": "Dividend restriction regimes materially impair the ability of core holdings to pay dividends for 12 consecutive months, without credible reversal.",
+      "linked_kpis": [
+        "kpi_dividend_restriction_flag"
+      ]
+    }
+  ],
+  "kill_criteria": [
+    {
+      "id": "K1",
+      "condition": "IF aggregate dividend coverage (portfolio FCF/dividends) falls below 1.0x AND does not recover above 1.2x within 12 months, THEN the dividend durability thesis is invalid.",
+      "persistence_required": "recover above 1.2x within 12 months",
+      "severity": "hard"
+    },
+    {
+      "id": "K2",
+      "condition": "IF ≥20% of portfolio weight cuts or suspends dividends AND this remains true for 12 consecutive months, THEN the quality dividend thesis is invalid.",
+      "persistence_required": "12 consecutive months",
+      "severity": "hard"
+    },
+    {
+      "id": "K3",
+      "condition": "IF ≥30% of sleeve weight fails the quality screen for 2 consecutive quarters AND rotation back to compliant names is not feasible without breaching constraints, THEN the thesis is invalid.",
+      "persistence_required": "2 consecutive quarters",
+      "severity": "hard"
+    }
+  ],
+  "kpis": {
+    "primary": [
+      {
+        "id": "kpi_div_coverage",
+        "name": "Portfolio Dividend Coverage (TTM FCF / Dividends)",
+        "unit": "x",
+        "direction": "higherIsBetter",
+        "source": "Portfolio engine computed from company filings; fallback: consensus FCF if filings missing",
+        "frequency": "quarterly (TTM updated on each earnings cycle)",
+        "rag_rules": {
+          "green": ">= 1.5",
+          "amber": "1.2 to 1.5",
+          "red": "< 1.2"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_div_cagr_3y",
+        "name": "Portfolio Dividend Growth (3y CAGR, local currency)",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "Portfolio engine computed from company IR dividend history; fallback: dividend-history aggregator",
+        "frequency": "quarterly",
+        "rag_rules": {
+          "green": ">= 5",
+          "amber": "0 to 5",
+          "red": "< 0"
+        },
+        "validates_pillar": "P1"
+      },
+      {
+        "id": "kpi_yield_vs_5y",
+        "name": "Portfolio Yield vs 5y Average Yield",
+        "unit": "ratio",
+        "direction": "higherIsBetter",
+        "source": "Portfolio engine computed from price feed + dividend history; fallback: vendor 5y yield metric",
+        "frequency": "weekly",
+        "rag_rules": {
+          "green": ">= 1.05",
+          "amber": "0.95 to 1.05",
+          "red": "< 0.95"
+        },
+        "validates_pillar": "P2"
+      },
+      {
+        "id": "kpi_leverage",
+        "name": "Portfolio Leverage Health (non-financials: Net Debt/EBITDA; financials: solvency proxy)",
+        "unit": "index",
+        "direction": "lowerIsBetter",
+        "source": "Portfolio engine computed from filings; banks: CET1 ratio; insurers: Solvency ratio; fallback: sector consensus",
+        "frequency": "quarterly",
+        "rag_rules": {
+          "green": "healthy",
+          "amber": "watch",
+          "red": "stressed"
+        },
+        "validates_pillar": "P3"
+      },
+      {
+        "id": "kpi_quality_screen_pass_rate",
+        "name": "Quality Screen Pass Rate (weight % passing)",
+        "unit": "percent",
+        "direction": "higherIsBetter",
+        "source": "Portfolio engine quality screen (rules-based)",
+        "frequency": "quarterly",
+        "rag_rules": {
+          "green": ">= 85",
+          "amber": "70 to 85",
+          "red": "< 70"
+        },
+        "validates_pillar": "P4"
+      }
+    ],
+    "secondary": [
+      {
+        "id": "kpi_div_cut_rate",
+        "name": "Dividend Cut/Suspension Weight (portfolio weight %)",
+        "unit": "percent",
+        "direction": "lowerIsBetter",
+        "source": "Portfolio engine from dividend events (company IR)",
+        "frequency": "monthly",
+        "rag_rules": {
+          "green": "0 to 5",
+          "amber": "5 to 20",
+          "red": ">= 20"
+        }
+      },
+      {
+        "id": "kpi_interest_coverage",
+        "name": "Interest Coverage Health (portfolio weighted)",
+        "unit": "x",
+        "direction": "higherIsBetter",
+        "source": "Portfolio engine computed from filings; fallback: consensus",
+        "frequency": "quarterly",
+        "rag_rules": {
+          "green": ">= 6",
+          "amber": "3 to 6",
+          "red": "< 3"
+        }
+      },
+      {
+        "id": "kpi_drawdown_rel",
+        "name": "Rolling 1y Max Drawdown: Portfolio minus Benchmark",
+        "unit": "percent",
+        "direction": "lowerIsBetter",
+        "source": "Portfolio performance engine; benchmark: MSCI World Quality (CHF-hedged if available)",
+        "frequency": "weekly",
+        "rag_rules": {
+          "green": "<= 0",
+          "amber": "0 to 5",
+          "red": "> 5"
+        }
+      },
+      {
+        "id": "kpi_dividend_restriction_flag",
+        "name": "Dividend Restriction Flag (financials/regulatory)",
+        "unit": "flag",
+        "direction": "lowerIsBetter",
+        "source": "Manual/curated regulatory events log mapped to holdings",
+        "frequency": "event-driven",
+        "rag_rules": {
+          "green": "no_restriction",
+          "amber": "temporary_or_partial",
+          "red": "material_restriction"
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "core_approved_vehicles": [
+      "Core dividend-quality equities (pre-approved list; 10–20 names)",
+      "Broad quality dividend ETFs (optional, if explicitly approved)"
+    ],
+    "satellite_vehicles": [
+      "Opportunistic adds in core sectors when yield vs 5y is attractive and coverage remains strong",
+      "Defensive sector tilts (utilities/consumer staples/healthcare) when macro regime stresses risk assets"
+    ],
+    "hedges_and_overlays": [
+      "CHF FX hedges on non-CHF income streams when FX volatility threatens income stability",
+      "Index hedges during extreme valuation/crowding (rules-based)",
+      "Cash buffer increases when multiple primary KPIs turn amber/red"
+    ],
+    "excluded_vehicles": [
+      "High-yield names where yield is a distress signal (dividend traps)",
+      "Businesses with structurally weak coverage (coverage < 1.2x and deteriorating)",
+      "Complex yield products/structured notes with embedded counterparty risk unless explicitly approved",
+      "Leveraged income products as a default expression"
+    ],
+    "risk_constraints": [
+      "Avoid dividend traps: do not buy solely for yield without coverage evidence",
+      "Maintain diversification across sectors and geographies",
+      "Respect financials-specific solvency proxies (banks CET1; insurers solvency)",
+      "No leverage",
+      "Max 15% single-name exposure within this sleeve"
+    ],
+    "rebalance_trigger": "5% deviation"
+  },
+  "allocation": {
+    "target_range_percent": [
+      15,
+      40
+    ]
+  },
+  "data_policy": {
+    "on_missing_primary_kpis": "freeze_adds_only"
+  },
+  "governance": {
+    "redteam_required_on_red": true,
+    "escalation_trigger": [
+      "kill_proximity",
+      "multiple_primary_red"
+    ],
+    "quality_screen_definition": [
+      "Non-financials: ROIC >= 10% (or operating margin consistently positive and stable)",
+      "Non-financials: Net Debt / EBITDA <= 2.5x (or sector-appropriate conservative threshold)",
+      "Dividend safety: Portfolio dividend coverage (TTM FCF / dividends) >= 1.2x",
+      "Stability: No sustained earnings/cash-flow deterioration (negative 3y trend triggers review)",
+      "Banks: CET1 ratio >= 12% ; Insurers: Solvency ratio >= 160% (or local equivalent)"
+    ]
+  }
+}
