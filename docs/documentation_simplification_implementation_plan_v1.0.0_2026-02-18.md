@@ -36,6 +36,7 @@ Out of scope:
 
 - 2026-02-18: Phase 1 executed. Historical process artifacts moved to `docs/history/`, and navigation was updated in `docs/index.md`.
 - 2026-02-18: Phase 2 executed. `docs/operator_playbook.md` was added and linked in onboarding paths.
+- 2026-02-18: Phase 3 executed. `docs/jaxx_repository_concept.md` and `docs/conventions.md` were consolidated to reduce overlap (concept = model, conventions = rules).
 
 ## Target operating model
 
