@@ -1,24 +1,35 @@
 # JAXX Docs History
 
-Version: 1.0.0
+Version: 1.1.0
 Last Updated: 2026-02-18
 Status: Active
 
 ## Purpose
 
-This folder stores completed plans, execution reports, and one-off audits that are useful for traceability but are not part of the default onboarding path.
+This folder is a low-priority historical record.
+It is optional for daily operation.
 
-## Rules
+Use this folder only when you need:
+- traceability of prior migration and simplification work,
+- context for why an old structure changed,
+- audit support for completed one-off tasks.
 
-- Keep historical documents immutable unless fixing factual errors.
-- New process reports and completed migration notes should be added here.
-- Do not place active canonical standards in this folder.
+## Lightweight usage rule
 
-## Typical contents
+Default path for normal work:
+1. `README.md`
+2. `docs/index.md`
+3. `docs/conventions.md`
+4. `docs/operator_playbook.md`
 
-- Completed project plans and execution reports.
-- One-time audits and consistency checks.
-- Historical implementation plans that are no longer normative.
+Only open `docs/history/` if you are investigating prior decisions.
+
+## What belongs here
+
+- completed plans,
+- execution reports,
+- one-time audits,
+- no longer normative implementation notes.
 
 ## References
 

@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 1.9.0
+Version: 2.0.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -35,17 +35,13 @@ Use this file first to locate active standards and operational content.
 - Documentation simplification implementation plan: `docs/documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`
 - Operator playbook: `docs/operator_playbook.md`
 
-## History and completed artifacts
+## History and completed artifacts (optional)
 
-Historical process artifacts are stored in `docs/history/`.
+Historical process artifacts are stored in `docs/history/` and are not required for daily operation.
 
+Start here only if needed:
 - `docs/history/README.md`
-- `docs/history/step2_move_plan.md`
-- `docs/history/step2_execution_report.md`
-- `docs/history/step3_dedup_review.md`
-- `docs/history/step4_secrets_hardening.md`
-- `docs/history/task_a_consistency_audit_2026-02-18.md`
-- `docs/history/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
+- `docs/history/phases_summary.md`
 
 ## Implemented layout snapshot
 
