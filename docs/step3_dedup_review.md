@@ -1,87 +1,55 @@
 # Step 3 Deduplication Review Queue
 
-Version: 1.0.0
+Version: 1.2.0
 Last Updated: 2026-02-18
-Status: Awaiting user decisions
+Status: In progress (cross-domain decisions applied, template decision pending)
 
 ## Purpose
 
-This file tracks Step 3 deduplication decisions in a no-loss workflow.
-It follows the agreed rule: when the newest file cannot be determined reliably, present all candidates for user choice.
+Track Step 3 deduplication in a no-loss workflow.
+When canonical ownership cannot be determined reliably, present all candidates for explicit user choice before further deletion.
 
-## Decision methodology
+## Completed deterministic cleanup
 
-1. If a clear semantic version exists, keep the highest version in `active/` and keep prior versions in `archive/`.
-2. If two files are byte-identical and one is a copy suffix variant (`(1)`, `(2)`), keep the canonical non-suffix name.
-3. If file role is ambiguous across domains (OpenClaw system vs investments), do not delete; request user decision.
+The following duplicates/placeholders were removed without ambiguity:
 
-## A) Clear by methodology (proposed automatic cleanup)
+- Removed copy-suffix duplicate:
+  - `investments/guides/archive/Investment_Guide_v1.1.0_2026-02-10 (1).md`
+- Removed copy-suffix duplicate:
+  - `investments/guides/archive/research-summary-template_v1.1.0_2026-02-10 (1).md`
+- Removed same-version duplicates from archive where an identical active canonical exists:
+  - `investments/guides/archive/Investment_Guide_v1.2.0_2026-02-10.md`
+  - `investments/guides/archive/Investment_Guide_v1.3.0_2026-02-10.md`
+- Removed placeholder files:
+  - `100_All_Guides/txt.txt`
+  - `workspace_files/2nd_Installation/txt.txt`
+  - `openclaw/system/installation/legacy/txt.txt`
 
-### A1. Copy-suffix duplicates with identical content
+## Explicit user decisions applied
 
-- Keep: `investments/guides/archive/Investment_Guide_v1.1.0_2026-02-10.md`
-  - Duplicate candidate: `investments/guides/archive/Investment_Guide_v1.1.0_2026-02-10 (1).md`
-- Keep: `investments/guides/archive/research-summary-template_v1.1.0_2026-02-10.md`
-  - Duplicate candidate: `investments/guides/archive/research-summary-template_v1.1.0_2026-02-10 (1).md`
+User-selected canonical owner for cross-domain duplicates: keep `openclaw/system/installation/legacy/*` versions and remove corresponding `investments/guides/active/*` copies.
 
-### A2. Same-version duplicate in `active/` and `archive/` with identical content
+Removed according to decision:
+- `investments/guides/active/USER_v1.1.0.md`
+- `investments/guides/active/open_claw_architecture_v_1_5_2.md`
+- `investments/guides/active/openclaw_openrouter_presets_configuration_v_1_1.md`
+- `investments/guides/active/open_claw_user_guide_v_1_2.md`
 
-Proposed rule: keep only one canonical `active` copy for the current active version, keep historical versions in archive.
+## Pending explicit user decision
 
-- `Investment_Guide_v1.2.0_2026-02-10.md`
-  - Active: `investments/guides/active/Investment_Guide_v1.2.0_2026-02-10.md`
-  - Archive duplicate: `investments/guides/archive/Investment_Guide_v1.2.0_2026-02-10.md`
-- `Investment_Guide_v1.3.0_2026-02-10.md`
-  - Active: `investments/guides/active/Investment_Guide_v1.3.0_2026-02-10.md`
-  - Archive duplicate: `investments/guides/archive/Investment_Guide_v1.3.0_2026-02-10.md`
+### Non-versioned template variants (archive)
 
-## B) Ambiguous and needs user decision
+Please choose one policy:
+- Keep all variants (rename to normalized archive names), or
+- Select one canonical file and retire the others.
 
-### B1. Cross-domain duplicates (same content, different location role)
-
-These files are byte-identical but appear in both OpenClaw legacy and investment active areas. The canonical owner is unclear without product intent.
-
-1. `openclaw/system/installation/legacy/USER_v1.1.0.md`
-2. `investments/guides/active/USER_v1.1.0.md`
-
-3. `openclaw/system/installation/legacy/open_claw_architecture_v_1_5_2.md`
-4. `investments/guides/active/open_claw_architecture_v_1_5_2.md`
-
-5. `openclaw/system/installation/legacy/openclaw_openrouter_presets_configuration_v_1_1.md`
-6. `investments/guides/active/openclaw_openrouter_presets_configuration_v_1_1.md`
-
-7. `openclaw/system/installation/legacy/open_claw_user_guide_v_1_2.md`
-8. `investments/guides/active/open_claw_user_guide_v_1_2.md`
-
-Decision requested for each pair:
-- Keep both (because each domain keeps its own historical context), or
-- Keep one canonical location and replace the other with a pointer note.
-
-### B2. Non-versioned template variants
-
-These files do not have trustworthy version metadata and cannot be ordered by date reliably:
-
+Candidates:
 - `investments/guides/archive/research-summary-template.md`
 - `investments/guides/archive/research-summary-template (1).md`
 - `investments/guides/archive/research-summary-template (2).md`
 - `investments/guides/archive/research-summary-template (3).md`
 - `investments/guides/archive/research-summary-template (4).md`
 
-Decision requested:
-- Keep all variants in archive with normalized names, or
-- Select one as canonical and retire the rest.
+## Next action
 
-## C) Placeholder files
-
-These placeholders are identical and likely removable, but deletion is deferred until Step 3 approval:
-
-- `100_All_Guides/txt.txt`
-- `workspace_files/2nd_Installation/txt.txt`
-- `openclaw/system/installation/legacy/txt.txt`
-
-## Next action after decisions
-
-Once decisions are confirmed, execute Step 3 in one commit with:
-- full pre/post file manifests,
-- deterministic rename/remove mapping,
-- no content loss validation.
+After the template decision above, execute final Step 3 normalization commit and then proceed to Step 4 secrets hardening.
