@@ -11,7 +11,7 @@ It gives a one-page view of what changed and where details live.
 
 ## Phase outcomes
 
-- Phase 1: moved non-normative process artifacts into `docs/history/`.
+- Phase 1: moved non-normative process artifacts into `governance_docs/history/`.
 - Phase 2: added operator playbook and reduced onboarding friction.
 - Phase 3: consolidated overlapping governance guidance.
 - Phase 4: applied metadata and secrets hardening checks.
@@ -28,4 +28,4 @@ It gives a one-page view of what changed and where details live.
 ## Operational note
 
 None of the files listed above are normative for daily work.
-Use `docs/index.md` for the active path.
+Use `governance_docs/index.md` for the active path.

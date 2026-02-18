@@ -20,7 +20,7 @@ No files were deleted in this step.
 
 1. OpenClaw runtime and assistant files moved under `openclaw/`.
 2. Investment guides, thesis, templates, profiles, and operations files moved under `investments/`.
-3. Legacy workspace readme moved under `docs/archive/`.
+3. Legacy workspace readme moved under `governance_docs/archive/`.
 4. Credentials were intentionally not changed in Step 2 (reserved for Step 4).
 
 ## Notes on duplicates

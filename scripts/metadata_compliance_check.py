@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate metadata and references against docs/metadata_policy.md."""
+"""Validate metadata and references against governance_docs/metadata_policy.md."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-MAP_PATH = ROOT / "docs" / "metadata_reference_classification_map.json"
+MAP_PATH = ROOT / "governance_docs" / "metadata_reference_classification_map.json"
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 STATUS_MD = {"Active", "Proposed", "Deprecated", "Archived"}

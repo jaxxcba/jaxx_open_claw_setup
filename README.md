@@ -8,7 +8,7 @@ The goal is simple:
 - make daily work repeatable,
 - make it easy for a new person to understand where everything lives.
 
-If you are new, read this page first, then open `docs/index.md`.
+If you are new, read this page first, then open `governance_docs/index.md`.
 
 ## Project philosophy
 
@@ -28,7 +28,7 @@ In short: this repo is a "system notebook" for operating, research, and assistan
 +---------------------------------------------------+
 |                  jaxx_open_claw_setup             |
 |---------------------------------------------------|
-| docs/         -> map, standards, playbook, history |
+| governance_docs/         -> map, standards, playbook, history |
 | openclaw/     -> assistant identity and system    |
 | investments/  -> investing thesis, guides, ops    |
 | credentials/  -> examples of credential files     |
@@ -42,7 +42,7 @@ In short: this repo is a "system notebook" for operating, research, and assistan
 ```text
 jaxx_open_claw_setup/
 |-- README.md
-|-- docs/
+|-- governance_docs/
 |   |-- index.md
 |   |-- jaxx_repository_concept.md
 |   |-- conventions.md
@@ -104,7 +104,7 @@ jaxx_open_claw_setup/
 
 ```text
                  +----------------------+
-                 |      docs/           |
+                 |      governance_docs/           |
                  | rules, playbook, map |
                  +----------+-----------+
                             |
@@ -121,7 +121,7 @@ jaxx_open_claw_setup/
 +----------------+   +----------------+   +---------------------+
 ```
 
-- `docs/` explains the rules and changes.
+- `governance_docs/` explains the rules and changes.
 - `openclaw/` defines how the assistant should behave.
 - `investments/` contains the actual research framework and outputs.
 - `credentials/` holds safe examples of expected secret file formats.
@@ -131,9 +131,9 @@ jaxx_open_claw_setup/
 ## What to read first (new contributor path)
 
 1. `README.md` (this file)
-2. `docs/index.md`
-3. `docs/conventions.md`
-4. `docs/operator_playbook.md`
+2. `governance_docs/index.md`
+3. `governance_docs/conventions.md`
+4. `governance_docs/operator_playbook.md`
 5. Then enter the area you need (`openclaw/` or `investments/`).
 6. Use `credentials/README.md` and `local_secrets/README.md` when handling secret-related setup.
 
@@ -153,7 +153,7 @@ When you update this repository:
 - keep active files in active folders,
 - move old versions into archive folders,
 - keep filenames clear and date or version tagged,
-- update `docs/index.md` when the structure changes,
+- update `governance_docs/index.md` when the structure changes,
 - keep this README in sync with major structure changes.
 
 ## Quick maintenance checklist

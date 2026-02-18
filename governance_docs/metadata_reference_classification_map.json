@@ -6,16 +6,16 @@
   "source_refs": [
     {
       "type": "internal",
-      "location": "docs/metadata_policy.md",
+      "location": "governance_docs/metadata_policy.md",
       "note": "Policy that this map implements"
     }
   ],
   "exclude_globs": [
-    "docs/archive/**",
+    "governance_docs/archive/**",
     "**/.git/**"
   ],
   "reference_required_globs": [
-    "docs/*.md",
+    "governance_docs/*.md",
     "investments/guides/active/*.md",
     "investments/operations/*.md",
     "investments/thesis/constitutions/*.json"
@@ -28,13 +28,13 @@
   ],
   "metadata_required_globs": {
     "md": [
-      "docs/*.md",
+      "governance_docs/*.md",
       "investments/guides/active/*.md",
       "investments/operations/*.md"
     ],
     "json": [
       "investments/thesis/constitutions/*.json",
-      "docs/*.json"
+      "governance_docs/*.json"
     ],
     "py": [
       "scripts/*.py"

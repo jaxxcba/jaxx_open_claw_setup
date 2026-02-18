@@ -11,7 +11,7 @@ Use this file first to locate active standards and operational content.
 
 ## Canonical top-level areas
 
-- `docs/`: governance, navigation, and operator guidance.
+- `governance_docs/`: governance, navigation, and operator guidance.
 - `openclaw/`: OpenClaw runtime and assistant setup.
 - `investments/`: investment guides, thesis files, templates, and profiles.
 - `scripts/`: utility scripts for maintenance and validation.
@@ -20,28 +20,28 @@ Use this file first to locate active standards and operational content.
 ## Normative core (default read path)
 
 1. `README.md`
-2. `docs/index.md`
-3. `docs/conventions.md`
-4. `docs/operator_playbook.md`
+2. `governance_docs/index.md`
+3. `governance_docs/conventions.md`
+4. `governance_docs/operator_playbook.md`
 
 ## Active governance files
 
-- Repository concept: `docs/jaxx_repository_concept.md`
-- Naming and operating conventions: `docs/conventions.md`
-- Metadata policy (active standard): `docs/metadata_policy.md`
-- Metadata classification map: `docs/metadata_reference_classification_map.json`
-- Metadata/reference compliance proposal: `docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md`
-- Documentation philosophy assessment: `docs/documentation_philosophy_assessment_v1.0.0_2026-02-18.md`
-- Documentation simplification implementation plan: `docs/documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`
-- Operator playbook: `docs/operator_playbook.md`
+- Repository concept: `governance_docs/jaxx_repository_concept.md`
+- Naming and operating conventions: `governance_docs/conventions.md`
+- Metadata policy (active standard): `governance_docs/metadata_policy.md`
+- Metadata classification map: `governance_docs/metadata_reference_classification_map.json`
+- Metadata/reference compliance proposal: `governance_docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md`
+- Documentation philosophy assessment: `governance_docs/documentation_philosophy_assessment_v1.0.0_2026-02-18.md`
+- Documentation simplification implementation plan: `governance_docs/documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`
+- Operator playbook: `governance_docs/operator_playbook.md`
 
 ## History and completed artifacts (optional)
 
-Historical process artifacts are stored in `docs/history/` and are not required for daily operation.
+Historical process artifacts are stored in `governance_docs/history/` and are not required for daily operation.
 
 Start here only if needed:
-- `docs/history/README.md`
-- `docs/history/phases_summary.md`
+- `governance_docs/history/README.md`
+- `governance_docs/history/phases_summary.md`
 
 ## Implemented layout snapshot
 
@@ -49,7 +49,7 @@ Start here only if needed:
 jaxx_open_claw_setup/
   README.md
 
-  docs/
+  governance_docs/
     index.md
     conventions.md
     jaxx_repository_concept.md
@@ -97,5 +97,5 @@ jaxx_open_claw_setup/
 
 ## References
 
-- `docs/conventions.md` - naming and canonical source rules.
-- `docs/operator_playbook.md` - day-to-day operating guidance.
+- `governance_docs/conventions.md` - naming and canonical source rules.
+- `governance_docs/operator_playbook.md` - day-to-day operating guidance.

@@ -121,7 +121,7 @@ Not required for:
 
 ## 6) Fit-for-purpose examples in this repository
 
-- `docs/` governance files: metadata required, references required where claims/decisions are made.
+- `governance_docs/` governance files: metadata required, references required where claims/decisions are made.
 - `investments/guides/active/`: metadata required, references required for analytical/factual content.
 - `investments/templates/`: metadata required, references optional unless template encodes policy.
 - `investments/thesis/constitutions/*.json`: JSON metadata required, `source_refs` required.
@@ -143,8 +143,8 @@ Phase 3 (expand):
 ## 8) Implementation plan
 
 1. Approve this rubric and classification matrix.
-2. Create a small `docs/metadata_policy.md` from this proposal (active standard).
-3. Add a file-class map in `docs/` identifying required-reference classes.
+2. Create a small `governance_docs/metadata_policy.md` from this proposal (active standard).
+3. Add a file-class map in `governance_docs/` identifying required-reference classes.
 4. Add a non-blocking validation script in `scripts/`.
 5. Run once, capture findings, fix only active canonical files.
 6. Enable CI warning mode, then gate mode for touched active files.
@@ -167,19 +167,19 @@ A repository is "fully compliant" when:
 ## 11) Concrete implementation delivered
 
 The following implementation artifacts are now in place:
-- Policy standard: `docs/metadata_policy.md`
-- File-class and requirement map: `docs/metadata_reference_classification_map.json`
+- Policy standard: `governance_docs/metadata_policy.md`
+- File-class and requirement map: `governance_docs/metadata_reference_classification_map.json`
 - Automated checker: `scripts/metadata_compliance_check.py`
-- Implementation plan: `docs/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
+- Implementation plan: `governance_docs/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
 
 Immediate execution steps:
 1. Run warning mode in CI and publish violation summary.
-2. Fix high-priority active files first (`docs/`, active investment guides, constitutions).
+2. Fix high-priority active files first (`governance_docs/`, active investment guides, constitutions).
 3. Enable strict mode for changed files.
 4. Expand strict mode to full active set once violation count is near zero.
 
 
 ## References
 
-- `docs/conventions.md` - repository conventions used by this proposal.
-- `docs/index.md` - canonical navigation map for policy placement.
+- `governance_docs/conventions.md` - repository conventions used by this proposal.
+- `governance_docs/index.md` - canonical navigation map for policy placement.

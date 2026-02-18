@@ -13,7 +13,7 @@ It is intentionally short: it defines the why and the shape, not day-to-day rule
 
 The repository is a system notebook with three primary domains:
 
-1. `docs/`
+1. `governance_docs/`
    - governance, navigation, and operator guidance.
 2. `openclaw/`
    - assistant identity and runtime setup.
@@ -37,17 +37,17 @@ Supporting domains:
 
 - Normative core:
   - `README.md`
-  - `docs/index.md`
-  - `docs/conventions.md`
-  - `docs/operator_playbook.md`
+  - `governance_docs/index.md`
+  - `governance_docs/conventions.md`
+  - `governance_docs/operator_playbook.md`
 - Historical process artifacts:
-  - `docs/history/`
+  - `governance_docs/history/`
 
 ## Ownership boundaries
 
 - This file (`jaxx_repository_concept.md`) defines intent and structure.
-- `docs/conventions.md` defines operational rules.
-- `docs/operator_playbook.md` defines day-to-day operating steps.
+- `governance_docs/conventions.md` defines operational rules.
+- `governance_docs/operator_playbook.md` defines day-to-day operating steps.
 
 ## Definition of success
 
@@ -60,7 +60,7 @@ The concept is successful when:
 ## References
 
 - `README.md`
-- `docs/index.md`
-- `docs/conventions.md`
-- `docs/operator_playbook.md`
-- `docs/history/README.md`
+- `governance_docs/index.md`
+- `governance_docs/conventions.md`
+- `governance_docs/operator_playbook.md`
+- `governance_docs/history/README.md`
