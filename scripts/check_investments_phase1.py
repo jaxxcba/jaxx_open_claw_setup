@@ -8,11 +8,17 @@ REPO = Path(__file__).resolve().parents[1]
 active_dir = REPO / "investments" / "guides" / "active"
 archive_dir = REPO / "investments" / "guides" / "archive"
 ops_dir = REPO / "investments" / "operations"
+templates_dir = REPO / "investments" / "templates"
 
 allowed_active = {
     "investment_methodology.md",
     "operator_quickstart.md",
     "research_sources_reference.json",
+}
+
+required_templates = {
+    "research-summary-template_v1.2.0_2026-02-10.md",
+    "us_market_mini_brief_template_v1.0.0_2026-02-18.md",
 }
 
 errors = []
@@ -54,6 +60,17 @@ if archive_dir.exists():
         if name.startswith("research-summary-template") and "_v" not in name and name != "README.md":
             errors.append(f"lean-archive violation (unversioned template file): investments/guides/archive/{name}")
 
+if not templates_dir.exists():
+    errors.append("missing templates directory: investments/templates")
+else:
+    template_files = {p.name for p in templates_dir.iterdir() if p.is_file() and p.suffix == ".md" and p.name != "README.md"}
+    missing_templates = sorted(required_templates - template_files)
+    if missing_templates:
+        errors.append(f"missing required templates: {', '.join(missing_templates)}")
+    for name in sorted(template_files):
+        if " " in name or "(" in name or ")" in name:
+            errors.append(f"template filename violation (spaces/parentheses): investments/templates/{name}")
+
 if errors:
     print("Investments documentation check FAILED")
     for err in errors:
@@ -64,3 +81,4 @@ print("Investments documentation check PASSED")
 print("- active guide lock is valid")
 print("- operations runtime-only guardrails are valid")
 print("- lean archive policy guardrails are valid")
+print("- template naming and presence guardrails are valid")

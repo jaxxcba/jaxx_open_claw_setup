@@ -24,7 +24,7 @@ Phase 1 lock means:
 - `operations/`: append-only runtime artifacts, research outputs, and logs.
 - `thesis/constitutions/`: active thesis constitution JSON files.
 - `thesis/portfolio/`: portfolio-level overlay JSON.
-- `templates/`: reusable report templates.
+- `templates/`: reusable report templates (research summary and U.S. market mini-brief canonical templates).
 
 ## Canonical read order
 

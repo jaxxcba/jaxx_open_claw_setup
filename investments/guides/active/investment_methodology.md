@@ -99,7 +99,9 @@ Outputs:
 - Evidence entry with source and confidence.
 - If needed, thesis review trigger.
 
-Use templates from `../../templates/`.
+Use templates from `../../templates/`:
+- `../../templates/research-summary-template_v1.2.0_2026-02-10.md`
+- `../../templates/us_market_mini_brief_template_v1.0.0_2026-02-18.md`
 
 Preferred research source universe:
 - `./research_sources_reference.json`

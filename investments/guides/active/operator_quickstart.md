@@ -42,6 +42,11 @@ Methodology and governance authority remain in `./investment_methodology.md`.
 4. Write impact output to `../../operations/research_results/`.
 5. Update logs if decision or confidence state changed.
 
+
+Template files:
+- `../../templates/research-summary-template_v1.2.0_2026-02-10.md`
+- `../../templates/us_market_mini_brief_template_v1.0.0_2026-02-18.md`
+
 ## Operations output conventions
 
 ### Research results
