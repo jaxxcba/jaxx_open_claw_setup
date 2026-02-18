@@ -1,0 +1,14 @@
+# Local secret storage
+/local_secrets/*
+!/local_secrets/.gitkeep
+!/local_secrets/README.md
+
+# Legacy credential filenames (never commit live material)
+/credentials/google_oauth_client.json
+/credentials/google_token.json
+/credentials/telegram-allowFrom.json
+/credentials/telegram-pairing.json
+
+# Optional local environment files
+.env
+.env.*
