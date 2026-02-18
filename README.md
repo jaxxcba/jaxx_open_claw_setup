@@ -76,8 +76,8 @@ jaxx_open_claw_setup/
 |   |   |-- active/   (current guides)
 |   |   `-- archive/  (older guide versions)
 |   |-- operations/
-|   |   |-- openclaw_thesis_system_v3_3.md
-|   |   `-- research_sources.json
+|   |   |-- research_results/
+|   |   `-- logs/
 |   |-- profiles/
 |   |   `-- trader_profile_*.md
 |   |-- templates/
