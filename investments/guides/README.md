@@ -17,9 +17,14 @@ During Phase 1, these are the only allowed files in `active/`:
 
 Any additional active file must be treated as a violation until Phase 1 is formally closed.
 
-## Archive
+## Phase 2 lean archive
 
-`archive/` contains superseded guidance retained for historical reference.
+`archive/` follows a lean policy:
+
+- keep one canonical file per version,
+- remove duplicate import variants,
+- remove unversioned throwaway copies,
+- maintain `archive/README.md` as the archive index and retention policy.
 
 ## Rule
 

@@ -15,6 +15,7 @@ Phase 1 lock means:
 - keep the current authority order,
 - keep operations runtime-only,
 - avoid further structural moves until one full bi-weekly cycle is run.
+- archive follows lean retention: one canonical file per version, no duplicate import copies.
 
 ## Folder responsibilities
 

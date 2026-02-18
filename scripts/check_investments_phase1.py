@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Validate Phase 1 investment documentation lock constraints."""
+"""Validate investment documentation lock constraints (Phase 1 + Phase 2)."""
 
 from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[1]
 active_dir = REPO / "investments" / "guides" / "active"
+archive_dir = REPO / "investments" / "guides" / "archive"
 ops_dir = REPO / "investments" / "operations"
 
 allowed_active = {
@@ -40,12 +41,26 @@ for req in required_ops_dirs:
     if not req.exists():
         errors.append(f"missing operations directory: {req.relative_to(REPO)}")
 
+if not (archive_dir / "README.md").exists():
+    errors.append("missing archive index: investments/guides/archive/README.md")
+
+if archive_dir.exists():
+    for p in archive_dir.iterdir():
+        if not p.is_file():
+            continue
+        name = p.name
+        if " (" in name and name.endswith(").md"):
+            errors.append(f"lean-archive violation (duplicate style filename): investments/guides/archive/{name}")
+        if name.startswith("research-summary-template") and "_v" not in name and name != "README.md":
+            errors.append(f"lean-archive violation (unversioned template file): investments/guides/archive/{name}")
+
 if errors:
-    print("Phase 1 check FAILED")
+    print("Investments documentation check FAILED")
     for err in errors:
         print(f"- {err}")
     sys.exit(1)
 
-print("Phase 1 check PASSED")
+print("Investments documentation check PASSED")
 print("- active guide lock is valid")
 print("- operations runtime-only guardrails are valid")
+print("- lean archive policy guardrails are valid")
