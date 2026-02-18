@@ -24,7 +24,7 @@ Any additional active file must be treated as a violation until Phase 1 is forma
 - keep one canonical file per version,
 - remove duplicate import variants,
 - remove unversioned throwaway copies,
-- maintain `archive/README.md` as the archive index and retention policy.
+- maintain `/archive/README.md` as the archive index and retention policy.
 
 ## Rule
 
