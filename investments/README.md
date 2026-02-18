@@ -1,10 +1,20 @@
 # Investments Workspace
 
-This folder is organized into three clear layers to minimize contradictions and maintenance overhead:
+This folder is organized into three clear layers to minimize contradictions and maintenance overhead.
 
 1. Methodology and operator guidance: `investments/guides/`
 2. Runtime outputs and research results: `investments/operations/`
 3. Canonical thesis rules and portfolio overlay: `investments/thesis/`
+
+## Phase 1 status
+
+Phase 1 is active and locked.
+
+Phase 1 lock means:
+- keep exactly two active guide files,
+- keep the current authority order,
+- keep operations runtime-only,
+- avoid further structural moves until one full bi-weekly cycle is run.
 
 ## Folder responsibilities
 
@@ -27,3 +37,9 @@ This folder is organized into three clear layers to minimize contradictions and 
 - If guidance conflicts with thesis JSON or portfolio JSON, JSON wins.
 - Runtime status, decisions, and evidence belong in `operations/`, not in guides.
 - Active guides should link to thesis and operations paths rather than duplicate their content.
+
+## Validation command
+
+Run this check after any documentation update:
+
+- `python3 /workspace/jaxx_open_claw_setup/scripts/check_investments_phase1.py`

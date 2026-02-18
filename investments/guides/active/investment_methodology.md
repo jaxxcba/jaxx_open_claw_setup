@@ -1,14 +1,15 @@
 # Investment Methodology
-Version: 1.0.0
+Version: 1.1.0
 Last Updated: 2026-02-18
 Status: Active
+Change Note: Added explicit Phase 1 lock and validation checkpoint.
 
 ## Purpose
 
 This is the single source of truth for how investment theses are defined, validated, governed, and reviewed.
 
 Use this document for methodology and governance only.
-Use `../operator_quickstart.md` for step-by-step execution.
+Use `./operator_quickstart.md` for step-by-step execution.
 
 ## Scope and authority
 
@@ -20,6 +21,19 @@ Authority order (highest to lowest):
 4. This guide and operator quickstart
 
 If this file conflicts with thesis JSON or portfolio JSON, JSON wins.
+
+## Phase 1 lock (implemented)
+
+Until one complete bi-weekly operating cycle is completed and reviewed:
+
+- Keep exactly two active guide documents (`investment_methodology.md`, `operator_quickstart.md`).
+- Keep `research_sources_reference.json` as the only active reference data file.
+- Keep `operations/` runtime-only.
+- Avoid structural folder changes unless a break-fix is required.
+
+Validation command:
+
+- `python3 /workspace/jaxx_open_claw_setup/scripts/check_investments_phase1.py`
 
 ## Core operating model
 
@@ -87,7 +101,8 @@ Outputs:
 
 Use templates from `../../templates/`.
 
-- Preferred research source universe: `./research_sources_reference.json`
+Preferred research source universe:
+- `./research_sources_reference.json`
 
 ## Non-negotiable governance rules
 
