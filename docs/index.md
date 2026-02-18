@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 1.2.0
+Version: 1.3.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -24,6 +24,7 @@ Use this file first to find canonical locations.
 - Step 2 plan and mapping: `docs/step2_move_plan.md`
 - Step 2 execution tracking: `docs/step2_execution_report.md`
 - Step 3 decision queue: `docs/step3_dedup_review.md`
+- Step 4 secrets hardening report: `docs/step4_secrets_hardening.md`
 
 ## Implemented layout snapshot
 
@@ -38,6 +39,8 @@ jaxx_open_claw_setup/
     jaxx_repository_concept.md
     step2_move_plan.md
     step2_execution_report.md
+    step3_dedup_review.md
+    step4_secrets_hardening.md
 
   openclaw/
     assistant/
@@ -63,9 +66,7 @@ jaxx_open_claw_setup/
   scripts/
   local_secrets/
 
-  credentials/      # retained until Step 4 cleanup
-  workspace_files/  # residual files pending Step 3 cleanup
-  100_All_Guides/   # residual files pending Step 3 cleanup
+  credentials/      # templates only (live credentials removed)
 ```
 
 ## Usage rules
@@ -78,6 +79,5 @@ jaxx_open_claw_setup/
 ## Next checkpoint
 
 - Step 2 is complete.
-- Next: Step 3 finalization pending only the template-variant decision in `docs/step3_dedup_review.md`.
-- Next: Step 3 deduplication and filename normalization (decision queue in `docs/step3_dedup_review.md`).
-- Then: Step 4 secrets hardening and credential removal from tracked paths.
+- Step 3 deduplication is complete.
+- Step 4 secrets hardening is complete.
