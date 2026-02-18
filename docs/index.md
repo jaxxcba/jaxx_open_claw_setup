@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 1.4.0
+Version: 1.5.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -26,6 +26,8 @@ Use this file first to find canonical locations.
 - Step 3 decision queue: `docs/step3_dedup_review.md`
 - Step 4 secrets hardening report: `docs/step4_secrets_hardening.md`
 - Metadata/reference compliance proposal: `docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md`
+- Metadata policy (active standard): `docs/metadata_policy.md`
+- Metadata classification map: `docs/metadata_reference_classification_map.json`
 
 ## Implemented layout snapshot
 
@@ -82,3 +84,8 @@ jaxx_open_claw_setup/
 - Step 2 is complete.
 - Step 3 deduplication is complete.
 - Step 4 secrets hardening is complete.
+
+
+## References
+
+- `docs/conventions.md` - naming and canonical source rules.

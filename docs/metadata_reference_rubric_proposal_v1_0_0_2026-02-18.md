@@ -163,3 +163,22 @@ A repository is "fully compliant" when:
 2. Whether template files should require `Version`.
 3. Whether `README.md` should follow full markdown rubric or a minimal variant.
 4. Threshold for moving from warning mode to blocking mode.
+
+## 11) Concrete implementation delivered
+
+The following implementation artifacts are now in place:
+- Policy standard: `docs/metadata_policy.md`
+- File-class and requirement map: `docs/metadata_reference_classification_map.json`
+- Automated checker: `scripts/metadata_compliance_check.py`
+
+Immediate execution steps:
+1. Run warning mode in CI and publish violation summary.
+2. Fix high-priority active files first (`docs/`, active investment guides, constitutions).
+3. Enable strict mode for changed files.
+4. Expand strict mode to full active set once violation count is near zero.
+
+
+## References
+
+- `docs/conventions.md` - repository conventions used by this proposal.
+- `docs/index.md` - canonical navigation map for policy placement.
