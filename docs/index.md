@@ -79,4 +79,5 @@ jaxx_open_claw_setup/
 
 - Step 2 is complete.
 - Next: Step 3 finalization pending only the template-variant decision in `docs/step3_dedup_review.md`.
+- Next: Step 3 deduplication and filename normalization (decision queue in `docs/step3_dedup_review.md`).
 - Then: Step 4 secrets hardening and credential removal from tracked paths.
