@@ -33,13 +33,13 @@ Use this file first to locate active standards and operational content.
 - Metadata policy (active standard): `governance_docs/metadata_policy.md`
 - Metadata classification map: `governance_docs/metadata_reference_classification_map.json`
 - Metadata/reference compliance proposal: `governance_docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md`
-- Documentation philosophy assessment: `governance_docs/documentation_philosophy_assessment_v1.0.0_2026-02-18.md`
-- Documentation simplification implementation plan: `governance_docs/documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`
 - Operator playbook: `governance_docs/operator_playbook.md`
 
 ## History and completed artifacts (optional)
 
 Historical process artifacts are stored in `governance_docs/history/` and are not required for daily operation.
+
+Archived governance references are stored in `archive/` (for example: `archive/documentation_philosophy_assessment_v1.0.0_2026-02-18.md` and `archive/documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`).
 
 Start here only if needed:
 - `governance_docs/history/README.md`
