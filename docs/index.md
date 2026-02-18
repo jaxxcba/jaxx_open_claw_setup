@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 1.3.0
+Version: 1.4.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -25,6 +25,7 @@ Use this file first to find canonical locations.
 - Step 2 execution tracking: `docs/step2_execution_report.md`
 - Step 3 decision queue: `docs/step3_dedup_review.md`
 - Step 4 secrets hardening report: `docs/step4_secrets_hardening.md`
+- Metadata/reference compliance proposal: `docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md`
 
 ## Implemented layout snapshot
 
