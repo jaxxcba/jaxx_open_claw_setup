@@ -78,3 +78,10 @@ Organization changes are done when:
 - archive files are separated from active files,
 - no tracked secrets remain,
 - `docs/index.md` reflects the real structure.
+
+## 9) Ambiguous version resolution
+
+When the newest file cannot be determined from explicit versioning in the filename, do not delete or overwrite candidates.
+Instead, list all candidate files in a decision queue and request explicit user selection before cleanup.
+
+If explicit semantic versioning is present, keep the highest version as active and move older versions to archive.

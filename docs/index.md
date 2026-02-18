@@ -1,8 +1,6 @@
 # JAXX Repository Index
 
-
 Version: 1.2.0
-
 Last Updated: 2026-02-18
 Status: Active
 
@@ -19,13 +17,13 @@ Use this file first to find canonical locations.
 - `scripts/`: utility scripts for maintenance and validation.
 - `local_secrets/`: local-only secrets storage (must be gitignored).
 
-
 ## Core governance files
 
 - Repository concept: `docs/jaxx_repository_concept.md`
 - Naming and operating conventions: `docs/conventions.md`
 - Step 2 plan and mapping: `docs/step2_move_plan.md`
 - Step 2 execution tracking: `docs/step2_execution_report.md`
+- Step 3 decision queue: `docs/step3_dedup_review.md`
 
 ## Implemented layout snapshot
 
@@ -80,5 +78,5 @@ jaxx_open_claw_setup/
 ## Next checkpoint
 
 - Step 2 is complete.
-- Next: Step 3 deduplication and filename normalization.
+- Next: Step 3 deduplication and filename normalization (decision queue in `docs/step3_dedup_review.md`).
 - Then: Step 4 secrets hardening and credential removal from tracked paths.
