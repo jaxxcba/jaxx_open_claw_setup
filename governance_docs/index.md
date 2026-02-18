@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 2.0.0
+Version: 2.2.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -15,7 +15,9 @@ Use this file first to locate active standards and operational content.
 - `openclaw/`: OpenClaw runtime and assistant setup.
 - `investments/`: investment guides, thesis files, templates, and profiles.
 - `scripts/`: utility scripts for maintenance and validation.
+- `credentials/`: credential file shape examples.
 - `local_secrets/`: local-only secrets storage (must be gitignored).
+- `archive/`: legacy repository artifacts.
 
 ## Normative core (default read path)
 
@@ -43,49 +45,21 @@ Start here only if needed:
 - `governance_docs/history/README.md`
 - `governance_docs/history/phases_summary.md`
 
-## Implemented layout snapshot
+## Stable layout contract (conflict-resistant)
 
-```text
-jaxx_open_claw_setup/
-  README.md
+To reduce merge conflicts in this index, this section tracks only stable directory anchors and not deep file snapshots.
 
-  governance_docs/
-    index.md
-    conventions.md
-    jaxx_repository_concept.md
-    metadata_policy.md
-    metadata_reference_classification_map.json
-    metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md
-    operator_playbook.md
-    history/
-
-  archive/
-
-  openclaw/
-    assistant/
-      identity/
-      memory_policy/
-    system/
-      config/
-      installation/
-        legacy/
-          README.md
-
-  investments/
-    guides/
-      active/
-      archive/
-    operations/
-    profiles/
-    templates/
-    thesis/
-      constitutions/
-      portfolio/
-
-  scripts/
-  local_secrets/
-  credentials/
-```
+Required anchors:
+- `governance_docs/history/`
+- `openclaw/assistant/`
+- `openclaw/system/config/`
+- `investments/guides/active/`
+- `investments/operations/`
+- `investments/thesis/`
+- `scripts/`
+- `credentials/examples/`
+- `local_secrets/`
+- `archive/`
 
 ## Usage rules
 
