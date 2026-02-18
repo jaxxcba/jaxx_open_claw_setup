@@ -69,7 +69,8 @@ jaxx_open_claw_setup/
 |       |   `-- readme_openclaw_json.md
 |       `-- installation/
 |           `-- legacy/
-|               `-- (older setup docs)
+|               |-- README.md
+|               `-- # JAXX -- Operating Constitution (v1.0).md
 |
 |-- investments/
 |   |-- guides/
