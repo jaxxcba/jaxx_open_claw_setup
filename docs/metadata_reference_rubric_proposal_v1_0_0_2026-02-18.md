@@ -170,6 +170,7 @@ The following implementation artifacts are now in place:
 - Policy standard: `docs/metadata_policy.md`
 - File-class and requirement map: `docs/metadata_reference_classification_map.json`
 - Automated checker: `scripts/metadata_compliance_check.py`
+- Implementation plan: `docs/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
 
 Immediate execution steps:
 1. Run warning mode in CI and publish violation summary.
