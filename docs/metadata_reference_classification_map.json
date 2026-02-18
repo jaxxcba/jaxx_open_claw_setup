@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0.0",
+  "last_updated": "2026-02-18",
+  "status": "active",
+  "source_refs": [
+    {
+      "type": "internal",
+      "location": "docs/metadata_policy.md",
+      "note": "Policy that this map implements"
+    }
+  ],
+  "exclude_globs": [
+    "docs/archive/**",
+    "**/.git/**"
+  ],
+  "reference_required_globs": [
+    "docs/*.md",
+    "investments/guides/active/*.md",
+    "investments/operations/*.md",
+    "investments/thesis/constitutions/*.json"
+  ],
+  "reference_optional_globs": [
+    "README.md",
+    "investments/templates/**",
+    "openclaw/**",
+    "scripts/*.py"
+  ],
+  "metadata_required_globs": {
+    "md": [
+      "docs/*.md",
+      "investments/guides/active/*.md",
+      "investments/operations/*.md"
+    ],
+    "json": [
+      "investments/thesis/constitutions/*.json",
+      "docs/*.json"
+    ],
+    "py": [
+      "scripts/*.py"
+    ]
+  }
+}
