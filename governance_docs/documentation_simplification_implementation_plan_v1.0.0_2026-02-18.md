@@ -60,12 +60,12 @@ Objective:
 - establish `governance_docs/history/` and move process/history files out of top-level `governance_docs/`.
 
 Candidate files to move:
-- `governance_docs/step2_move_plan.md`
-- `governance_docs/step2_execution_report.md`
-- `governance_docs/step3_dedup_review.md`
-- `governance_docs/step4_secrets_hardening.md`
-- `governance_docs/task_a_consistency_audit_2026-02-18.md`
-- `governance_docs/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
+- `governance_docs/history/step2_move_plan.md`
+- `governance_docs/history/step2_execution_report.md`
+- `governance_docs/history/step3_dedup_review.md`
+- `governance_docs/history/step4_secrets_hardening.md`
+- `governance_docs/history/task_a_consistency_audit_2026-02-18.md`
+- `governance_docs/history/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
 
 Execution checklist:
 - create `governance_docs/history/`.

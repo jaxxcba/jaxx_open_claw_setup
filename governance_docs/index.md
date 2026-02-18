@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 2.0.0
+Version: 2.1.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -60,7 +60,6 @@ jaxx_open_claw_setup/
     documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md
     operator_playbook.md
     history/
-    archive/
 
   openclaw/
     assistant/
@@ -75,7 +74,7 @@ jaxx_open_claw_setup/
   investments/
     guides/
       active/
-      archive/
+      archive/ (created when superseded guide versions exist)
     operations/
     profiles/
     templates/

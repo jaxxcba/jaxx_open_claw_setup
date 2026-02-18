@@ -35,3 +35,7 @@ Only open `governance_docs/history/` if you are investigating prior decisions.
 
 - `governance_docs/index.md`
 - `governance_docs/conventions.md`
+
+## Recent assessments
+
+- `governance_docs/history/repository_structure_cross_reference_assessment_v1.0.0_2026-02-18.md`

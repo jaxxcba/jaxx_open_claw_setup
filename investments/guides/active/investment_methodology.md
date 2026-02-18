@@ -28,7 +28,7 @@ Until one complete bi-weekly operating cycle is completed and reviewed:
 
 - Keep exactly two active guide documents (`investment_methodology.md`, `operator_quickstart.md`).
 - Keep `research_sources_reference.json` as the only active reference data file.
-- Keep `operations/` runtime-only.
+- Keep `../../operations/` runtime-only.
 - Avoid structural folder changes unless a break-fix is required.
 
 Validation command:
@@ -139,3 +139,13 @@ When methodology changes:
 2. Add a short change note at top.
 3. Confirm no conflicts with thesis and portfolio JSON.
 4. Move previous version to `../archive/` only if a separate versioned file is created.
+
+
+## References
+
+- `./operator_quickstart.md`
+- `../../thesis/portfolio/portfolio_master_v1_0.json`
+- `../../thesis/constitutions/`
+- `../../operations/`
+- `../../templates/research-summary-template_v1.2.0_2026-02-10.md`
+- `../../templates/us_market_mini_brief_template_v1.0.0_2026-02-18.md`

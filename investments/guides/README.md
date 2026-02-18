@@ -19,12 +19,12 @@ Any additional active file must be treated as a violation until Phase 1 is forma
 
 ## Phase 2 lean archive
 
-`archive/` follows a lean policy:
+`archive/` is created when superseded guide versions exist. It follows a lean policy:
 
 - keep one canonical file per version,
 - remove duplicate import variants,
 - remove unversioned throwaway copies,
-- maintain `/archive/README.md` as the archive index and retention policy.
+- maintain an `archive/README.md` index once archive content is created.
 
 ## Rule
 

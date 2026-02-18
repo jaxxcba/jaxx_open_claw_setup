@@ -1,6 +1,6 @@
 # JAXX Repository Conventions
 
-Version: 1.1.0
+Version: 1.2.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -28,6 +28,11 @@ Use `governance_docs/jaxx_repository_concept.md` for high-level rationale.
 ### Thesis JSON files
 - `thesis_<topic>_vX_Y.json`
 - example: `thesis_energy_systems_transition_v1_1.json`
+
+### Version token style for new files
+- for new versioned markdown files, use `vX.Y.Z` token style in filenames
+- example: `investment_guide_v1.4.0_2026-02-10.md`
+- existing legacy files using underscore tokens (for example `v1_0_0`) are grandfathered and should not be renamed only for style
 
 ## Canonical-source policy
 
@@ -83,6 +88,15 @@ If the newest file cannot be determined from explicit versioning in the filename
 - request explicit user selection before cleanup
 
 If semantic versioning is explicit, keep the highest version active and move older versions to archive.
+
+## Documentation hygiene checkpoint
+
+When a change affects repository structure, required checkpoint files are:
+- `README.md`
+- `governance_docs/index.md`
+- domain-level README files under `investments/`, `credentials/`, and `local_secrets/` as applicable
+
+These files must be reviewed and updated in the same change set when references or layout snapshots drift.
 
 ## References
 
