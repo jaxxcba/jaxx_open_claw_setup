@@ -19,12 +19,12 @@ The existing philosophy is fit for purpose for a long-lived personal operating s
 - naming standards,
 - and secrets hygiene.
 
-However, the current implementation has accumulated governance overhead (many policy and plan artifacts in `docs/`) that increases navigation cost for routine work. The system is therefore reliable but not yet minimal.
+However, the current implementation has accumulated governance overhead (many policy and plan artifacts in `governance_docs/`) that increases navigation cost for routine work. The system is therefore reliable but not yet minimal.
 
 ## What is working well
 
 1. Structural clarity is strong.
-   - Core areas (`docs/`, `openclaw/`, `investments/`) are clear and explicit.
+   - Core areas (`governance_docs/`, `openclaw/`, `investments/`) are clear and explicit.
 2. Risk controls are practical.
    - Secrets handling and canonical-source rules reduce common failure modes.
 3. Maintainability intent is good.
@@ -45,14 +45,14 @@ Adopt a simplification strategy with a two-tier model:
 
 1. Keep a compact normative core (3 canonical docs):
    - `README.md` (repository purpose + quickstart),
-   - `docs/index.md` (single navigation map),
-   - `docs/conventions.md` (rules only).
+   - `governance_docs/index.md` (single navigation map),
+   - `governance_docs/conventions.md` (rules only).
 2. Move all process/history artifacts to a clearly labeled lifecycle area:
-   - `docs/history/` (plans, reports, implementation notes, one-off audits).
+   - `governance_docs/history/` (plans, reports, implementation notes, one-off audits).
 3. Add one short "how to work here" playbook:
-   - `docs/operator_playbook.md` with 10-minute onboarding path and common tasks.
+   - `governance_docs/operator_playbook.md` with 10-minute onboarding path and common tasks.
 4. Preserve metadata policy but reduce verbosity in day-to-day paths.
-   - Keep `docs/metadata_policy.md` authoritative, but reference it from `docs/conventions.md` rather than requiring it in the default read sequence.
+   - Keep `governance_docs/metadata_policy.md` authoritative, but reference it from `governance_docs/conventions.md` rather than requiring it in the default read sequence.
 
 ## Decision
 
@@ -70,20 +70,20 @@ The right move is "simplify access paths while preserving governance depth." Kee
 ## Proposed phased rollout
 
 Phase 1 (low risk):
-- Introduce `docs/history/` and move non-normative reports/plans there.
-- Keep redirects/links from `docs/index.md` during transition.
+- Introduce `governance_docs/history/` and move non-normative reports/plans there.
+- Keep redirects/links from `governance_docs/index.md` during transition.
 
 Phase 2:
-- Publish `docs/operator_playbook.md`.
+- Publish `governance_docs/operator_playbook.md`.
 - Reduce duplicate guidance between concept and conventions docs.
 
 Phase 3:
-- Archive superseded governance notes and keep only active canonical standards in top-level `docs/`.
+- Archive superseded governance notes and keep only active canonical standards in top-level `governance_docs/`.
 
 ## References
 
 - `README.md`
-- `docs/index.md`
-- `docs/conventions.md`
-- `docs/jaxx_repository_concept.md`
-- `docs/metadata_policy.md`
+- `governance_docs/index.md`
+- `governance_docs/conventions.md`
+- `governance_docs/jaxx_repository_concept.md`
+- `governance_docs/metadata_policy.md`

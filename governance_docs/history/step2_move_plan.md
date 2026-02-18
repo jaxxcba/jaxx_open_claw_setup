@@ -79,7 +79,7 @@ Step 2 performs moves only and does not delete files.
 ### General and legacy notes
 
 - `workspace_files/read_me_workspace.md`
-  -> `docs/archive/readme_workspace_legacy.md`
+  -> `governance_docs/archive/readme_workspace_legacy.md`
 
 - `100_All_Guides/txt.txt`
   -> retained for Step 3 cleanup review
@@ -105,8 +105,8 @@ Handle in Step 4 with sanitization/replacement:
 - [x] Move files according to mapping
 - [x] Preserve all historical files
 - [x] Preserve duplicates for Step 3
-- [x] Update `docs/index.md` to match new structure
-- [x] Record execution in `docs/step2_execution_report.md`
+- [x] Update `governance_docs/index.md` to match new structure
+- [x] Record execution in `governance_docs/step2_execution_report.md`
 
 ## Next actions
 

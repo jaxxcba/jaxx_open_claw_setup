@@ -50,7 +50,7 @@ Acceptance:
 Owner: Documentation Maintainers
 
 Target files first:
-- `docs/*.md` active governance files,
+- `governance_docs/*.md` active governance files,
 - `investments/guides/active/*.md`,
 - `investments/thesis/constitutions/*.json`,
 - `scripts/*.py` metadata fields.
@@ -63,7 +63,7 @@ Steps:
 
 Acceptance:
 - Warning output count reduced by at least 60 percent from baseline.
-- Zero violations in `docs/*.md`.
+- Zero violations in `governance_docs/*.md`.
 
 ### Phase 2 - Protect changed files (Days 4-7)
 
@@ -90,7 +90,7 @@ Entry criteria:
 Steps:
 1. Enable strict check for full active scope:
    - `python3 scripts/metadata_compliance_check.py --strict`
-2. Keep `docs/archive/**` excluded.
+2. Keep `governance_docs/archive/**` excluded.
 3. Introduce exception process for temporary waivers (time-boxed).
 
 Acceptance:
@@ -171,7 +171,7 @@ Spec completeness:
 
 Emission and quality:
 - [x] Full files only, lint and format clean
-- [x] Build and tests pass (docs/script checks executed)
+- [x] Build and tests pass (governance_docs/script checks executed)
 - [x] Migrations idempotent and reversible (not applicable: no migration)
 - [x] Post-migration verification queries included (not applicable: no migration)
 - [x] CHANGELOG updated under `[Unreleased]` (uncertain: no changelog file present in repository)
@@ -181,6 +181,6 @@ uncertain:
 
 ## References
 
-- `docs/metadata_policy.md` - active metadata/reference standard.
-- `docs/metadata_reference_classification_map.json` - enforcement scope and classes.
-- `docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md` - proposal rationale.
+- `governance_docs/metadata_policy.md` - active metadata/reference standard.
+- `governance_docs/metadata_reference_classification_map.json` - enforcement scope and classes.
+- `governance_docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md` - proposal rationale.

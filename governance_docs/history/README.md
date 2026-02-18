@@ -18,11 +18,11 @@ Use this folder only when you need:
 
 Default path for normal work:
 1. `README.md`
-2. `docs/index.md`
-3. `docs/conventions.md`
-4. `docs/operator_playbook.md`
+2. `governance_docs/index.md`
+3. `governance_docs/conventions.md`
+4. `governance_docs/operator_playbook.md`
 
-Only open `docs/history/` if you are investigating prior decisions.
+Only open `governance_docs/history/` if you are investigating prior decisions.
 
 ## What belongs here
 
@@ -33,5 +33,5 @@ Only open `docs/history/` if you are investigating prior decisions.
 
 ## References
 
-- `docs/index.md`
-- `docs/conventions.md`
+- `governance_docs/index.md`
+- `governance_docs/conventions.md`

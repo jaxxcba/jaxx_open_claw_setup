@@ -44,7 +44,7 @@ Required references for classes marked required:
 ## 2) Reference requirement classes
 
 Reference requirements are managed by:
-- `docs/metadata_reference_classification_map.json`
+- `governance_docs/metadata_reference_classification_map.json`
 
 Rules:
 - `reference_required_globs`: references are mandatory.
@@ -84,5 +84,5 @@ Run strict mode on changed files only:
 
 ## References
 
-- `docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md` - source proposal and rationale.
-- `docs/conventions.md` - canonical location and naming conventions.
+- `governance_docs/metadata_reference_rubric_proposal_v1_0_0_2026-02-18.md` - source proposal and rationale.
+- `governance_docs/conventions.md` - canonical location and naming conventions.
