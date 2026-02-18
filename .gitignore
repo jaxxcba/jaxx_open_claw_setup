@@ -12,3 +12,6 @@
 # Optional local environment files
 .env
 .env.*
+=======
+.DS_Store
+🦀 Credentials - ATTENTION/
