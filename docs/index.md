@@ -1,6 +1,8 @@
 # JAXX Repository Index
 
+
 Version: 1.2.0
+
 Last Updated: 2026-02-18
 Status: Active
 
@@ -16,6 +18,7 @@ Use this file first to find canonical locations.
 - `investments/`: investment management guides, thesis files, templates, and profiles.
 - `scripts/`: utility scripts for maintenance and validation.
 - `local_secrets/`: local-only secrets storage (must be gitignored).
+
 
 ## Core governance files
 
