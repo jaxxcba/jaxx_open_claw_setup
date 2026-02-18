@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 1.6.0
+Version: 1.7.0
 Last Updated: 2026-02-18
 Status: Active
 
@@ -29,6 +29,7 @@ Use this file first to find canonical locations.
 - Metadata policy (active standard): `docs/metadata_policy.md`
 - Metadata classification map: `docs/metadata_reference_classification_map.json`
 - Metadata implementation plan: `docs/metadata_compliance_implementation_plan_v1_0_0_2026-02-18.md`
+- Documentation philosophy assessment: `docs/documentation_philosophy_assessment_v1.0.0_2026-02-18.md`
 
 ## Implemented layout snapshot
 
