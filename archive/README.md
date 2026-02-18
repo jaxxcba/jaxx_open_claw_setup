@@ -22,3 +22,5 @@ This repository now uses a single archive folder at `archive/`.
 - `USER_v1.0.0.md`
 - `research_summary_template_v1.0.0_2026-02-18.md`
 - `readme_workspace_legacy.md`
+- `documentation_philosophy_assessment_v1.0.0_2026-02-18.md`
+- `documentation_simplification_implementation_plan_v1.0.0_2026-02-18.md`
