@@ -1,6 +1,6 @@
 # JAXX Repository Index
 
-Version: 2.1.0
+Version: 2.1.1
 Last Updated: 2026-02-18
 Status: Active
 
@@ -67,9 +67,6 @@ jaxx_open_claw_setup/
       memory_policy/
     system/
       config/
-      installation/
-        legacy/
-          README.md
 
   investments/
     guides/
@@ -86,6 +83,10 @@ jaxx_open_claw_setup/
   local_secrets/
   credentials/
 ```
+
+## Merge-resolution note
+
+The layout snapshot reflects the current tree and excludes removed legacy installation paths under `openclaw/system/installation/legacy/`.
 
 ## Usage rules
 

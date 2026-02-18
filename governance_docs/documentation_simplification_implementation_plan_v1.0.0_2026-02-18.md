@@ -1,6 +1,6 @@
 # Documentation Simplification Implementation Plan
 
-Version: 1.0.0
+Version: 1.0.1
 Last Updated: 2026-02-18
 Status: Active
 Owner: Repository Governance
@@ -112,6 +112,9 @@ Acceptance criteria:
 - concept and conventions each have clearly distinct responsibility.
 
 ## Implementation commands (exact)
+
+Historical command note: these commands document the original execution sequence from 2026-02-18. Current repository state already has these files under `governance_docs/history/`.
+
 
 ```zsh
 #!/usr/bin/env zsh -f
