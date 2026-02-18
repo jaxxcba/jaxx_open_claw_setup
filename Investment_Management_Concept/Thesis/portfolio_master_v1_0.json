@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "portfolio_id": "portfolio_master",
+    "name": "OpenClaw Portfolio Master",
+    "owner": "Rene",
+    "review_cadence": "biweekly",
+    "version": "1.0",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-02-14",
+        "change": "Initial portfolio overlay: sleeve allocation bands + circuit breaker + action constraints (risk-off mode)."
+      }
+    ],
+    "status": "active"
+  },
+  "sleeves": [
+    {
+      "thesis_slug": "thesis_ai_scarcity_infrastructure",
+      "thesis_id": "324780e7-b6e7-47f3-ad8e-ab2fca1b8dfe",
+      "target_range_percent": [
+        10,
+        25
+      ],
+      "role": "Structural Growth + Scarcity Rents + Inflation/Real-Asset Hedge"
+    },
+    {
+      "thesis_slug": "thesis_bitcoin_crypto_rails",
+      "thesis_id": "25321b8f-612b-4e8e-b17f-bfca2db6b1f6",
+      "target_range_percent": [
+        5,
+        20
+      ],
+      "role": "Growth"
+    },
+    {
+      "thesis_slug": "thesis_dividend_quality_compounders",
+      "thesis_id": "4c097670-d0e1-4476-97ae-e78c3778d41b",
+      "target_range_percent": [
+        15,
+        40
+      ],
+      "role": "Income + Defensive Growth"
+    },
+    {
+      "thesis_slug": "thesis_energy_systems_transition",
+      "thesis_id": "b8026772-83c2-470d-89dc-b79fe014609f",
+      "target_range_percent": [
+        8,
+        20
+      ],
+      "role": "Conservative Diversifier + Asymmetric Upside (Scarcity & Reliability)"
+    }
+  ],
+  "governance": {
+    "global_data_policy": "freeze_adds_only_when_missing_primary_kpis",
+    "circuit_breaker": {
+      "name": "multi-thesis_red_circuit_breaker",
+      "trigger_window_days": 7,
+      "trigger_condition": "If >=2 theses enter RED status or 'kill_proximity' escalation within the same 7-day window",
+      "mode": "risk_off_mode",
+      "risk_off_mode_rules": {
+        "allowed_actions": [
+          "Pause adds in all risk-on sleeves (AI, Crypto, Energy)",
+          "Reduce exposure toward lower end of target bands",
+          "Add hedges/overlays consistent with each thesis implementation section",
+          "Increase cash or short-duration defensive exposure (outside theses) as temporary buffer"
+        ],
+        "disallowed_actions": [
+          "Increase gross exposure in risk-on sleeves",
+          "Add new satellite positions in Crypto/AI/Energy",
+          "Increase single-name concentration"
+        ],
+        "exit_condition": "Return to normal mode only when fewer than 2 theses remain RED for 14 consecutive days"
+      }
+    },
+    "overlap_rule": "If an instrument is held across multiple theses, it must be CORE in at most one thesis; others must treat it as SATELLITE or exclude it explicitly.",
+    "large_change_guardrail": "Any single action changing exposure by >3% of AUM requires 48-hour cool-off + written one-pager."
+  }
+}
