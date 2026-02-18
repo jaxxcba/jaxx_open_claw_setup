@@ -20,7 +20,7 @@ Phase 1 lock means:
 ## Folder responsibilities
 
 - `guides/active/`: only current, normative guidance.
-- `guides/archive/`: superseded guidance kept for traceability.
+- `guides/archive/`: superseded guidance kept for traceability when prior versions exist.
 - `operations/`: append-only runtime artifacts, research outputs, and logs.
 - `thesis/constitutions/`: active thesis constitution JSON files.
 - `thesis/portfolio/`: portfolio-level overlay JSON.

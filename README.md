@@ -47,10 +47,11 @@ jaxx_open_claw_setup/
 |   |-- jaxx_repository_concept.md
 |   |-- conventions.md
 |   |-- operator_playbook.md
-|   |-- history/
-|   |   `-- (completed plans and reports)
-|   `-- archive/
-|       `-- readme_workspace_legacy.md
+|   `-- history/
+|       `-- (completed plans and reports)
+|
+|-- archive/
+|   `-- (legacy repository artifacts)
 |
 |-- openclaw/
 |   |-- assistant/
@@ -75,7 +76,7 @@ jaxx_open_claw_setup/
 |-- investments/
 |   |-- guides/
 |   |   |-- active/   (current guides)
-|   |   `-- archive/  (older guide versions)
+|   |   `-- archive/  (created when superseded guide versions exist)
 |   |-- operations/
 |   |   |-- research_results/
 |   |   `-- logs/

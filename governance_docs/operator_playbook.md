@@ -1,6 +1,6 @@
 # JAXX Operator Playbook
 
-Version: 1.0.0
+Version: 1.1.0
 Last Updated: 2026-02-18
 Status: Active
 Owner: Repository Governance
@@ -51,12 +51,24 @@ Use it to decide where to edit, what to check, and how to keep changes consisten
 2. Update references in `governance_docs/index.md`.
 3. Run metadata check on changed files.
 
+### Structure-affecting change hygiene
+
+When a change adds, removes, or relocates folders/files:
+
+1. Review `README.md` and `governance_docs/index.md`.
+2. Review the relevant domain README (for example `investments/README.md`).
+3. Run both checks:
+   - `python3 /workspace/jaxx_open_claw_setup/scripts/metadata_compliance_check.py --strict --changed-from HEAD~1`
+   - `python3 /workspace/jaxx_open_claw_setup/scripts/reference_drift_check.py --strict`
+
 ## Pre-commit checklist
 
 - [ ] File is in canonical location.
 - [ ] Naming follows repository conventions.
 - [ ] No live secrets were added.
 - [ ] `governance_docs/index.md` updated for structural changes.
+- [ ] `README.md` and affected domain README files reviewed for snapshot/reference drift.
+- [ ] Metadata and reference drift checks passed.
 - [ ] Active versus history/archive placement is correct.
 
 ## References
