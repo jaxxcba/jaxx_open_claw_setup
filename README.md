@@ -28,7 +28,7 @@ In short: this repo is a "system notebook" for operating, research, and assistan
 +---------------------------------------------------+
 |                  jaxx_open_claw_setup             |
 |---------------------------------------------------|
-| docs/         -> project map, plans, reports      |
+| docs/         -> map, standards, playbook, history |
 | openclaw/     -> assistant identity and system    |
 | investments/  -> investing thesis, guides, ops    |
 | credentials/  -> examples of credential files     |
@@ -46,11 +46,9 @@ jaxx_open_claw_setup/
 |   |-- index.md
 |   |-- jaxx_repository_concept.md
 |   |-- conventions.md
-|   |-- step2_move_plan.md
-|   |-- step2_execution_report.md
-|   |-- step3_dedup_review.md
-|   |-- step4_secrets_hardening.md
-|   |-- task_a_consistency_audit_2026-02-18.md
+|   |-- operator_playbook.md
+|   |-- history/
+|   |   `-- (completed plans and reports)
 |   `-- archive/
 |       `-- readme_workspace_legacy.md
 |
@@ -106,7 +104,7 @@ jaxx_open_claw_setup/
 ```text
                  +----------------------+
                  |      docs/           |
-                 | rules, plans, map    |
+                 | rules, playbook, map |
                  +----------+-----------+
                             |
                             v
@@ -133,10 +131,10 @@ jaxx_open_claw_setup/
 
 1. `README.md` (this file)
 2. `docs/index.md`
-3. `docs/jaxx_repository_concept.md`
-4. `docs/conventions.md`
-5. `credentials/README.md` and `local_secrets/README.md`
-6. Then enter the area you need (`openclaw/` or `investments/`).
+3. `docs/conventions.md`
+4. `docs/operator_playbook.md`
+5. Then enter the area you need (`openclaw/` or `investments/`).
+6. Use `credentials/README.md` and `local_secrets/README.md` when handling secret-related setup.
 
 ## Safety model for sensitive data
 

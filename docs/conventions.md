@@ -1,14 +1,15 @@
 # JAXX Repository Conventions
 
-Version: 1.0.0
+Version: 1.1.0
 Last Updated: 2026-02-18
 Status: Active
 
-## 1) Scope
+## Scope
 
-These conventions define how files are named, where they live, and how changes are maintained.
+This file defines operational rules for naming, placement, and maintenance.
+Use `docs/jaxx_repository_concept.md` for high-level rationale.
 
-## 2) Naming rules
+## Naming rules
 
 ### Folders
 - lowercase only
@@ -17,71 +18,74 @@ These conventions define how files are named, where they live, and how changes a
 
 ### Files
 - lowercase snake_case preferred
-- allow existing external naming only when required
+- allow external naming only when required
 - do not use suffixes such as `(1)`, `(2)`, `(copy)`
 
 ### Versioned markdown
 - `topic_vX.Y.Z_YYYY-MM-DD.md`
-- Example: `investment_guide_v1.4.0_2026-02-10.md`
+- example: `investment_guide_v1.4.0_2026-02-10.md`
 
 ### Thesis JSON files
 - `thesis_<topic>_vX_Y.json`
-- Example: `thesis_energy_systems_transition_v1_1.json`
+- example: `thesis_energy_systems_transition_v1_1.json`
 
-## 3) Canonical-source policy
+## Canonical-source policy
 
 One document type must have one canonical home.
-- Repository governance docs: `docs/`
+- repository governance docs: `docs/`
 - OpenClaw runtime docs/config: `openclaw/`
-- Investment docs/templates/thesis: `investments/`
+- investment docs/templates/thesis: `investments/`
 
-If other folders need the same content, add references, not duplicates.
+If other folders need the same content, link to the canonical file instead of duplicating it.
 
-## 4) Active vs archive policy
+## Active vs history vs archive
 
-- Active documents live in `active/` folders.
-- Prior versions live in corresponding `archive/` folders.
-- Keep all historical versions for now.
-- When a new version becomes active, move the previous active version to archive.
+- active governance standards stay in top-level `docs/`
+- completed plans and reports go to `docs/history/`
+- versioned content history for domain docs stays in matching `archive/` folders
+- when a new version becomes active, move the prior active version to archive
 
-## 5) Change workflow
+## Change workflow
 
 For each documentation change:
-1. Edit canonical active file.
-2. Bump version/date if semantics changed.
-3. Move replaced version to archive.
-4. Commit with a scope-first message.
+1. edit the canonical active file
+2. bump version/date if semantics changed
+3. move replaced versions or process artifacts to history/archive as appropriate
+4. update `docs/index.md` when structure or canonical links change
+5. commit with a scope-first message
 
-Recommended commit style:
+Recommended commit prefixes:
 - `docs: ...`
 - `repo: ...`
 - `chore: ...`
 
-## 6) Secrets policy
+## Secrets policy
 
-- Never commit live secrets, tokens, refresh tokens, or client secrets.
-- Keep local secrets in `local_secrets/` only, and gitignore that path.
-- Track only sanitized examples, for example `*.example.json`.
-- Rotate and revoke any credentials that were previously committed.
+- never commit live secrets, tokens, refresh tokens, or client secrets
+- keep local secrets in `local_secrets/` only, and gitignore that path
+- track only sanitized examples, such as `*.example.json`
+- rotate and revoke credentials that were previously committed
 
-## 7) Duplication policy
-
-- Do not keep duplicate active files with identical purpose.
-- Keep one active canonical file and archive alternatives if needed.
-- Remove placeholder files like `txt.txt` during cleanup unless they serve a clear purpose.
-
-## 8) Definition of done for organization updates
+## Definition of done for organization updates
 
 Organization changes are done when:
-- every file has one clear canonical home,
-- active files are easy to discover,
-- archive files are separated from active files,
-- no tracked secrets remain,
-- `docs/index.md` reflects the real structure.
+- every file has one clear canonical home
+- active files are easy to discover
+- historical and archived files are separated from active files
+- no tracked secrets remain
+- `docs/index.md` reflects the real structure
 
-## 9) Ambiguous version resolution
+## Ambiguous version resolution
 
-When the newest file cannot be determined from explicit versioning in the filename, do not delete or overwrite candidates.
-Instead, list all candidate files in a decision queue and request explicit user selection before cleanup.
+If the newest file cannot be determined from explicit versioning in the filename:
+- do not delete or overwrite candidates
+- list candidates in a decision queue
+- request explicit user selection before cleanup
 
-If explicit semantic versioning is present, keep the highest version as active and move older versions to archive.
+If semantic versioning is explicit, keep the highest version active and move older versions to archive.
+
+## References
+
+- `docs/jaxx_repository_concept.md`
+- `docs/index.md`
+- `docs/history/README.md`
