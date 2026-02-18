@@ -70,6 +70,7 @@ jaxx_open_claw_setup/
       config/
       installation/
         legacy/
+          README.md
 
   investments/
     guides/
