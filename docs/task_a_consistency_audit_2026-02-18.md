@@ -1,6 +1,6 @@
 # Task A Consistency and Secret Scan Report
 
-Version: 1.0.1
+Version: 1.0.2
 Last Updated: 2026-02-18
 Status: Completed (scan only, non-destructive)
 
@@ -63,3 +63,8 @@ No code/content relocation is required based on Task A findings.
 ## Handoff note
 
 This report is now the canonical Task A audit artifact for PR review and follow-up Task B planning.
+
+
+## Merge conflict resolution note
+
+This audit file is the canonical merged version for this branch and should be preferred if GitHub shows competing variants.

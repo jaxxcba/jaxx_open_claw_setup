@@ -113,3 +113,8 @@ Could we use one global `archive/` at repository root? Yes, but it usually becom
 - Step 4 (secrets hardening): completed.
 
 Next practical step is optional Task B: documentation wording cleanup for historical path references in migration reports.
+
+
+## Merge conflict resolution note
+
+This README is the canonical merged version for this branch and should be preferred if GitHub shows competing variants.
